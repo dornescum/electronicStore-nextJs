@@ -7,7 +7,7 @@ const Index = ({items}) => {
 	const {onAdd,  cartItems} = useContext(ProductContext);
 	console.log(items);
 	return (
-		<main className='flex'>
+		<main className='flex font-dosis'>
 			<section className="basis-1 lg:basis-3/4">
 				<h2>Products</h2>
 				<div className=" flex flex-wrap gap-2 mx-0 justify-center items-center mb-20">

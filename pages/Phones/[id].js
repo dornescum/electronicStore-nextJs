@@ -22,7 +22,7 @@ const PhoneId = ({itemId}) => {
 
 	console.log(price);
 	return (
-		<div className="flex flex-col md:flex-row pt-40 pb-32">
+		<div className="flex flex-col md:flex-row pt-40 pb-32 font-dosis">
 			<div className="basis-1/2 flex justify-center items-center">
 				<div className="flex flex-col justify-center items-center  w-full md:w-80 md:ml-2 lg:w-64
 		  h-96 md:h-80 lg:h-96 drop-shadow-md hover:drop-shadow-2xl ease-in duration-300">
