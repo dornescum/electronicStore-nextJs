@@ -4,8 +4,8 @@ import {ProductContext} from "../context/ProductContext";
 import {useContext} from "react";
 import Product from "../components/Product";
 
-export default function Home() {
-	const {onAdd, products, cartItems} = useContext(ProductContext);
+export default function Home({products}) {
+	const {onAdd, cartItems} = useContext(ProductContext);
 	// console.log(onAdd);
 	console.log(products);
 	console.log(cartItems);
@@ -19,11 +19,14 @@ export default function Home() {
 			</Head>
 			<main>
 				<h1 className="text-3xl font-bold underline"> Hello world! </h1>
-				<ul>
-					{products.map((product) => (
-						<Product key={product.id} product={product} onAdd={onAdd}></Product>
-					))}
-				</ul>
+				<div className='flex flex-col md:flex-row items-center justify-center'>
+					<ul className='flex flex-col md:flex-row'>
+						{products.map((product) => (
+							<Product key={product.id} product={product} onAdd={onAdd} src={product.main_img.link}></Product>
+						))}
+					</ul>
+				</div>
+
 
 
 				{/*<p>{initialState}</p>*/}
@@ -33,3 +36,13 @@ export default function Home() {
 		</div>
 	);
 }
+export const getStaticProps = async () => {
+	const res = await fetch(`https://electronis-api.herokuapp.com/api/phones`);
+	const products = await res.json();
+
+	return {
+		props: {
+			products,
+		},
+	};
+};

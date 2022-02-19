@@ -3,7 +3,7 @@ import {ProductContext} from "../../context/ProductContext";
 import Link from 'next/link';
 
 const Index = () => {
-	const {onAdd, products, cartItems} = useContext(ProductContext);
+	const {onAdd,onRemove, products, cartItems} = useContext(ProductContext);
 
 	const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
 	const taxPrice = itemsPrice * 0.09;

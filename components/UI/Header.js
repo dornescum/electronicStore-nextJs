@@ -29,7 +29,7 @@ export default function Header({countCartItems}) {
 				}
 				<Link href="/">
 					<a>
-						<h1 className="text-lg font-bold">Menu</h1>
+						<h1 className="text-lg font-bold">ECommerce</h1>
 					</a>
 				</Link>
 			</div>
