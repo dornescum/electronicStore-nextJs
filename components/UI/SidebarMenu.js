@@ -17,14 +17,15 @@ const electronicProducts = [
 
 const SidebarMenu = (props) => {
 	return (<aside className="fixed  z-50 transition-all
-		bg-gray-200 text-gray-600 w-64 top-12 left-0 opacity-100 overflow-y-auto sidebar rounded-md">
+		 text-gray-600 w-64 top-16 left-0 opacity-100 overflow-y-auto sidebar rounded-md shadow-md
+		fixed h-full  md:h-96">
 
-		<nav className=' rounded-md h-full md:h-[700px] bg-stone-50 pt-8'>
+		<nav className=' rounded-md h-full md:h-96 bg-stone-50 pt-8'>
 			<div className="flex flex-col py-4">
 				{electronicProducts.map((link) => {
-					return <div className="py-2 mb-0 mt-1 hover:bg-primary" key={link.id} data-testid={link.id}>
+					return <div className="py-2 mb-0 mt-1 hover:bg-zinc-100 w-full transition duration-150 ease-out" key={link.id} data-testid={link.id}>
 						<Link href={link.link}>
-							<a className="flex justify-end pr-8" onClick={props.onClose} data-testid={link.title}>{link.title} </a>
+							<a className="flex justify-start pl-12" onClick={props.onClose} data-testid={link.title}>{link.title} </a>
 						</Link>
 					</div>;
 				})}

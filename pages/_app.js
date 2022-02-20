@@ -12,6 +12,8 @@ const phoneApi = 'https://electronis-api.herokuapp.com/api/phones';
 function MyApp({Component, pageProps}) {
 	const [products, setProducts] = useState([]);
 	const [cartItems, setCartItems] = useState([]);
+	const [showSidebar, setShowSidebar] = useState(false);
+
 
 	useEffect(() => {
 		const getData = async () => {
@@ -48,7 +50,7 @@ function MyApp({Component, pageProps}) {
 	};
 
 
-	return <ProductContext.Provider value={{products, cartItems, onAdd, onRemove}}>
+	return <ProductContext.Provider value={{products, cartItems, onAdd, onRemove, showSidebar, setShowSidebar}}>
 		<Header countCartItems={cartItems.length}/>
 		<Component {...pageProps} />
 	</ProductContext.Provider>;

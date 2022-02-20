@@ -5,7 +5,7 @@ import {useContext} from "react";
 import Product from "../components/Product";
 
 export default function Home({products}) {
-	const {onAdd, cartItems} = useContext(ProductContext);
+	const {onAdd, cartItems,} = useContext(ProductContext);
 	// console.log(onAdd);
 	// console.log(products);
 	// console.log(cartItems);

@@ -1,9 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 // import {NavLink} from "react-router-dom";
 import Link from "next/link";
 // import SignIn from "../SignIn";
 import {MdClose, MdFormatAlignRight, MdChevronLeft, MdChevronRight, MdOutlineMenuOpen} from "react-icons/md";
 import SidebarMenu from "./SidebarMenu";
+import {ProductContext} from "../../context/ProductContext";
+
 import {DiRedhat} from "react-icons/di";
 import {BsCart, BsChevronDoubleDown} from "react-icons/bs";
 
@@ -18,8 +20,11 @@ const menuLinks = [
 ];
 
 export default function Header({countCartItems}) {
+	const {showSidebar, setShowSidebar} = useContext(ProductContext);
 
-	const [showSidebar, setShowSidebar] = useState(false);
+
+			// todo sa inchid automat meniul cand dau in afara
+	// const [showSidebar, setShowSidebar] = useState(false);
 	const [showCartInfo, setShowCartInfo] = useState(false);
 	const [showProducts, setShowProducts] = useState(false);
 
