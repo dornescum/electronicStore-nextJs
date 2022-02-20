@@ -29,12 +29,12 @@ export default function Header({countCartItems}) {
 			<div className="ml-0 lg:ml-96 flex items-center justify-center">
 				{showSidebar ?
 					<button onClick={() => setShowSidebar(!showSidebar)}
-							className="p-2  transition ease-out duration-300 bg-primary  mx-4 md:mr-8 md:hidden block">
+							className="p-2  transition ease-out duration-300 bg-primary  mx-4 md:mr-8">
 						<MdClose size="22"/>
 					</button>
 					:
 					<button onClick={() => setShowSidebar(!showSidebar)}
-							className="p-2  transition ease-out duration-300 bg-primary  mx-4 md:mr-8 md:hidden block">
+							className="p-2  transition ease-out duration-300 bg-primary  mx-4 md:mr-8">
 						{/*<MdFormatAlignRight/>*/}
 						<MdOutlineMenuOpen size="22"/>
 					</button>
@@ -46,32 +46,31 @@ export default function Header({countCartItems}) {
 				</Link>
 
 
-				<div className="relative"
-					 onClick={() => setShowProducts(!showProducts)}
-				>
-					<span className="mx-2 cursor-pointer">Products</span>
-					<div className={`absolute top-10 -left-32 md:-left-28 w-32 h-80 flex items-center justify-center flex-col
-					rounded-md bg-zinc-50 shadow-2xl border transition duration-700 ease-out  translate-y-2 sidebar
-					${showProducts ? "hidden" : "block "}`}>
-						<button className="relative">
-						<span className="absolute bottom-6 -right-12 border">
-							<MdClose size="18"/>
-						</span>
-						</button>
-						{menuLinks.map((link) => {
-							return <div
-								className="py-2 mb-0 mt-1 hover:bg-zinc-100 w-full transition duration-150 ease-out"
-								key={link.id} data-testid={link.id}>
+				{/*<div className="relative hidden md:block"*/}
+				{/*	 onClick={() => setShowProducts(!showProducts)}>*/}
+				{/*	<span className="mx-2 cursor-pointer">Products</span>*/}
+				{/*	<div className={`absolute top-10 -left-32 md:-left-28 w-32 h-80 flex items-center justify-center flex-col*/}
+				{/*	rounded-md bg-zinc-50 shadow-2xl border transition duration-700 ease-out  translate-y-2 sidebar*/}
+				{/*	${showProducts ? "hidden" : "block "}`}>*/}
+				{/*		<button className="relative">*/}
+				{/*		<span className="absolute bottom-6 -right-12 border">*/}
+				{/*			<MdClose size="18"/>*/}
+				{/*		</span>*/}
+				{/*		</button>*/}
+				{/*		{menuLinks.map((link) => {*/}
+				{/*			return <div*/}
+				{/*				className="py-2 mb-0 mt-1 hover:bg-zinc-100 w-full transition duration-150 ease-out"*/}
+				{/*				key={link.id} data-testid={link.id}>*/}
 
-								<Link href={link.link}>
-									<a className="flex justify-start pl-4" data-testid={link.title}>{link.title} </a>
-								</Link>
-							</div>;
-						})}
+				{/*				<Link href={link.link}>*/}
+				{/*					<a className="flex justify-start pl-4" data-testid={link.title}>{link.title} </a>*/}
+				{/*				</Link>*/}
+				{/*			</div>;*/}
+				{/*		})}*/}
 
-					</div>
+				{/*	</div>*/}
 
-				</div>
+				{/*</div>*/}
 
 
 			</div>
