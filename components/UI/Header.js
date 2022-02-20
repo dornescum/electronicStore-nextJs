@@ -25,7 +25,7 @@ export default function Header({countCartItems}) {
 
 			// todo sa inchid automat meniul cand dau in afara
 	// const [showSidebar, setShowSidebar] = useState(false);
-	const [showCartInfo, setShowCartInfo] = useState(false);
+	const [showCartInfo, setShowCartInfo] = useState(true);
 	const [showProducts, setShowProducts] = useState(false);
 
 
