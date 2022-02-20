@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Index = ({items}) => {
 	const {onAdd,  cartItems} = useContext(ProductContext);
-	console.log(items);
+	// console.log(items);
 	return (
 		<main className='flex font-dosis'>
 			<section className="basis-1 lg:basis-3/4">

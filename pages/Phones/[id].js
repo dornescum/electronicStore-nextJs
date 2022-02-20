@@ -2,11 +2,13 @@ import React, {useContext} from 'react';
 import {ProductContext} from "../../context/ProductContext";
 import Button from "../../components/UI/Button";
 import { BsCircle} from 'react-icons/bs';
+import SingleProduct from "../../components/SingleProduct";
+import Product from "../../components/Product";
 
 
 const PhoneId = ({itemId}) => {
 	const {onAdd,  cartItems} = useContext(ProductContext);
-
+	// console.log(onAdd);
 
 
 	console.log(itemId);
@@ -18,9 +20,8 @@ const PhoneId = ({itemId}) => {
 	const mainImg = itemId.message.main_img.link;
 	const short_desc = itemId.message.short_description;
 	const colors = itemId.message.specs.colors;
-	const product = itemId.message.title;
 
-	console.log(price);
+	// console.log(colors);
 	return (
 		<div className="flex flex-col md:flex-row pt-40 pb-32 font-dosis">
 			<div className="basis-1/2 flex justify-center items-center">
@@ -30,27 +31,11 @@ const PhoneId = ({itemId}) => {
 				</div>
 			</div>
 			<div className="basis-1/2 flex flex-col items-start justify-center h-96">
+				{!itemId && <div className='mt-20 text-red-700 text-3xl'>Loading...</div> }
+				<SingleProduct title={title} price={price} subtitle={subtitle} short_desc={short_desc} onAdd={onAdd}
+				colors={colors}
+				/>
 
-				<div className=" pl-8 pr-4 py-4 mx-1">
-					<p className='py-2 text-2xl'>{title}</p>
-					<p className='py-2 text-3xl first-letter:capitalize'>{short_desc}</p>
-					<ul className='flex'>
-						{colors.map((col)=>{
-							return <li key={col} className=' py-2'>
-								<div>
-									<BsCircle color={col} />
-									<p className='px-2'>{col}</p>
-								</div>
-
-								</li>
-						})}
-					</ul>
-					<p className='py-2'>${price}</p>
-					<p className='py-2'>{subtitle}</p>
-					{/*<p>{desc}</p>*/}
-					<Button >Add to cart</Button>
-
-				</div>
 			</div>
 
 		</div>
