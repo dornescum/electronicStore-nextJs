@@ -19,7 +19,7 @@ module.exports = {
       },
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
-        ping: 'ping 3s ease-in-out infinite',
+        ping: 'ping 8s ease-in-out infinite',
       }
     },
   },

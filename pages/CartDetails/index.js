@@ -4,14 +4,17 @@ import Link from 'next/link';
 
 const Index = () => {
 	const {onAdd,onRemove, products, cartItems} = useContext(ProductContext);
+	// todo change taxes to 0.08
+	const taxes = products[0].taxes.shipping_fee;
+	const vat =products[0].taxes.vat;
+
 
 	const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
 	const taxPrice = itemsPrice * 0.09;
-	const shippingPrice = itemsPrice > 100 ? 0 : 20;
+	// const taxPrice = itemsPrice * taxes;
+	const shippingPrice = itemsPrice > 1000 ? 0 : vat;
 	const totalPrice = itemsPrice + taxPrice + shippingPrice;
-	console.log(itemsPrice);
-	console.log(taxPrice);
-	console.log(totalPrice);
+
 
 	return (
 		<div className='pt-20 flex justify-center items-center'>

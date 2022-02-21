@@ -8,7 +8,7 @@ import FilterByBrand from "../../components/filters/FilterByBrand";
 
 const Index = ({items}) => {
 	const {onAdd, cartItems} = useContext(ProductContext);
-	console.log(items);
+	// console.log(items);
 	const link = 'Phones';
 	const values = [1000, 700, 450, 350];
 	const brands = ['apple', 'samsung', 'sony', 'motorola', 'nokia', 'blackberry'];

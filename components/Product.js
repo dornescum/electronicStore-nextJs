@@ -1,15 +1,17 @@
 import Button from "./UI/Button";
 import { BsStarFill } from 'react-icons/bs';
 import Link from "next/link";
-import {FaStar} from "react-icons/fa";
+import {AiFillHeart} from "react-icons/ai";
 
 
 export default function Product(props) {
 	const { product, onAdd } = props;
 
+
+
 	return (
 		<div className='flex flex-col bg-slate-50 w-full md:w-80 lg:w-48 md:ml-2
-		rounded-sm shadow-md mx-2  mt-2 md:mt-6  h-96 md:h-80 lg:h-80 drop-shadow-md hover:drop-shadow-2xl ease-in duration-300
+		rounded-sm shadow-md mx-2  mt-2 md:mt-6  h-96 md:h-80 lg:h-[300px] drop-shadow-md hover:drop-shadow-2xl ease-in duration-300
 		font-dosis relative'>
 			<Link href={`/Phones/${product.id}`}>
 				<a>
@@ -19,27 +21,30 @@ export default function Product(props) {
 			</Link>
 
 			<div className='absolute top-0 left-0'>
-				<p className={`${product.flash_sale ? 'bg-red-500 rounded-sm text-white text-sm': ''} z-10 p-1`}> {product.flash_sale ? `- ${product.discount[0]} %` : ""}</p>
+				<p className={`${product.discount ? 'bg-red-500 rounded-sm text-white text-sm': ' ' || product.discount === 0 ? 'hidden' :""}
+				
+				 z-10 p-1`}> { - product.discount  }</p>
 			</div>
 			<div className='absolute bottom-0  w-full'>
 				<ul className='flex justify-start px-1'>
-					<li className={`py-4 md:py-1 text-xl ${product.favorite === true ? "italic text-2xl":""}`}>
+					<li className={`py-4 md:py-1 text-xl pl-2 ${product.favorite === true ? "italic text-2xl":""}`}>
 						{product.title}
 					</li>
-					<li className='flex items-center animate-ping px-1 ' >
-						{product.favorite === true ? <BsStarFill    color="#ffda0a"/> : " "}
+					<li className='flex items-center animate-ping pl-4 ' >
+						{product.favorite === true ? <AiFillHeart    color="#ff0a0a"/> : " "}
 					</li>
 				</ul>
 				<div className='text-sm px-1 flex'>
 					{/*{product.rating} &#9733;*/}
-					{[...Array(product.rating)].map((star, index)=>{
-						return <div key={index} className='flex'>
-							<FaStar color='#ffda0a'/>
-						</div>
-					})}
+					{/*{[...Array(product.rating)].map((star, index)=>{*/}
+					{/*	return <div key={index} className='flex'>*/}
+					{/*		<FaStar color='#ffda0a'/>*/}
+					{/*	</div>*/}
+					{/*})}*/}
+					<p></p>
 				</div>
 				<div className=' md:mb-2 px-1'>
-					<ul className='flex  justify-between py-4 md:py-1'>
+					<ul className='flex  justify-between py-4 md:py-1 px-2'>
 						<li className='underline py-1'>
 							<Link href={`/Phones/${product.id}`}>
 								<a>
@@ -47,7 +52,7 @@ export default function Product(props) {
 								</a>
 							</Link>
 						</li>
-						<li className='py-1'>{product.price} &euro;</li>
+						<li className='py-1 text-lg lg:text-base font-bold md:font-thin'>{product.price} &euro;</li>
 					</ul>
 
 				</div>
