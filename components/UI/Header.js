@@ -30,7 +30,7 @@ export default function Header({countCartItems}) {
 
 
 	return (
-		<header className="block bg-zinc-50 z-10 flex w-full fixed justify-between p-4 font-dosis">
+		<header className="block bg-zinc-50 z-10 flex w-full fixed top-0 justify-between p-4 font-dosis">
 			<div className="ml-0 lg:ml-96 flex items-center justify-center">
 				{showSidebar ?
 					<button onClick={() => setShowSidebar(!showSidebar)}
