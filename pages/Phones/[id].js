@@ -4,6 +4,7 @@ import Button from "../../components/UI/Button";
 import { BsCircle} from 'react-icons/bs';
 import SingleProduct from "../../components/SingleProduct";
 import Product from "../../components/Product";
+import Link from "next/link";
 
 
 const PhoneId = ({itemId}) => {
@@ -31,6 +32,10 @@ const PhoneId = ({itemId}) => {
 				</div>
 			</div>
 			<div className="basis-1/2 flex flex-col items-start justify-center h-96">
+				<Link href="/Phones">
+					<a className='mt-0 pl-6 bg-zinc-50'>Phones</a>
+				</Link>
+
 				{!itemId && <div className='mt-20 text-red-700 text-3xl'>Loading...</div> }
 				<SingleProduct title={title} price={price} subtitle={subtitle} short_desc={short_desc} onAdd={onAdd}
 				colors={colors}

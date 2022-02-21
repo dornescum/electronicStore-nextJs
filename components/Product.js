@@ -7,8 +7,8 @@ export default function Product(props) {
 	const { product, onAdd } = props;
 
 	return (
-		<div className='flex flex-col justify-around bg-slate-50 w-full md:w-80 md:ml-2 lg:w-64  items-center
-		rounded-sm shadow-md  mt-16 md:mt-20  h-96 md:h-80 lg:h-96 drop-shadow-md hover:drop-shadow-2xl ease-in duration-300
+		<div className='flex flex-col justify-around bg-slate-50 w-full md:w-80 md:ml-2 lg:w-48  items-center
+		rounded-sm shadow-md mx-2  mt-2 md:mt-6  h-96 md:h-80 lg:h-96 drop-shadow-md hover:drop-shadow-2xl ease-in duration-300
 		font-dosis'>
 			<img className="object-cover h-48 lg:h-36 w-full rounded-tl rounded-tr" src={product?.main_img.link}
 				 loading='lazy'	 alt={product?.title} />

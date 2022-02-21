@@ -6,6 +6,7 @@ import {ProductContext} from "../context/ProductContext";
 import reducer from "../context/reducer";
 import {REMOVE_FROM_CART, ADD_TO_CART} from "../context/actions";
 import Header from "../components/UI/Header";
+import Layout from "../components/UI/Layout";
 
 const phoneApi = 'https://electronis-api.herokuapp.com/api/phones';
 
@@ -52,7 +53,10 @@ function MyApp({Component, pageProps}) {
 
 	return <ProductContext.Provider value={{products, cartItems, onAdd, onRemove, showSidebar, setShowSidebar}}>
 		<Header countCartItems={cartItems.length}/>
-		<Component {...pageProps} />
+		<Layout>
+			<Component {...pageProps} />
+		</Layout>
+
 	</ProductContext.Provider>;
 }
 
