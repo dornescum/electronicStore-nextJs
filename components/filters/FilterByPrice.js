@@ -19,22 +19,22 @@ const FilterByPrice = ({link,value}) => {
 					<p>Filter by Price : </p>
 				</li>
 				<li className='py-1'>
-					<Link href={`/${link}/${value[0]}`}>
+					<Link href={`/${link}/price/${value[0]}`}>
 						<a>Under 1000 &#8364;</a>
 					</Link>
 				</li>
 				<li className='py-1'>
-					<Link href={`/${link}/${value[1]}`}>
+					<Link href={`/${link}/price/${value[1]}`}>
 						<a>Under 700 &#8364;</a>
 					</Link>
 				</li>
 				<li className='py-1'>
-					<Link href={`/${link}/${value[2]}`}>
+					<Link href={`/${link}/price/${value[2]}`}>
 						<a>Under 450 &#8364;</a>
 					</Link>
 				</li>
 				<li className='py-1'>
-					<Link href={`/${link}/${value[3]}`}>
+					<Link href={`/${link}/price/${value[3]}`}>
 						<a>Under 350 &#8364;</a>
 					</Link>
 				</li>

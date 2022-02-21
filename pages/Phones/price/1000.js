@@ -1,8 +1,9 @@
 import React, {useContext, useState} from 'react';
-import Product from "../../components/Product";
-import {ProductContext} from "../../context/ProductContext";
+import Product from "../../../components/Product";
+import {ProductContext} from "../../../context/ProductContext";
 import Link from "next/link";
-import FilterByPrice from "../../components/filters/FilterByPrice";
+import FilterByPrice from "../../../components/filters/FilterByPrice";
+import FilterByBrand from "../../../components/filters/FilterByBrand";
 
 const Ph700 = ({items}) => {
 	const {onAdd, cartItems} = useContext(ProductContext);
@@ -13,12 +14,14 @@ const Ph700 = ({items}) => {
 		}
 		return item.price < num;
 	});
-	const price700 = handleAllFilters(700);
+	const price1000 = handleAllFilters(1000);
 	const handleFilterByPrice = (e) => {
 		setPriceFilter(true);
 	};
 	const link = 'Phones';
 	const values =[1000,700,450,350];
+	const brands =['apple', 'samsung', 'sony', 'motorola', 'nokia', 'blackberry']
+
 	return (
 		<main className="flex font-dosis mx-60">
 			<section className="hidden lg:block  lg:basis-1/5">
@@ -26,6 +29,7 @@ const Ph700 = ({items}) => {
 					<a className='mt-0 pl-6 bg-zinc-50'>Remove All filters</a>
 				</Link>
 				<FilterByPrice link={link} value={values} />
+				<FilterByBrand link={link} brands={brands} />
 			</section>
 			<section className="basis-1 lg:basis-4/5">
 				<Link href="/Phones">
@@ -34,7 +38,7 @@ const Ph700 = ({items}) => {
 				<div
 					className={` flex flex-wrap gap-2 mx-0 justify-start items-center mb-20`}>
 					{!items && <div className="mt-20 text-red-700 text-3xl">Loading...</div>}
-					{price700.map((product) => (
+					{price1000.map((product) => (
 						<Product key={product.id} product={product} onAdd={onAdd}></Product>
 					))}
 				</div>
