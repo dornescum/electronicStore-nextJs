@@ -32,7 +32,7 @@ const Ph700 = ({items}) => {
 					<a className='mt-4 pl-2'>Phones</a>
 				</Link>
 				<div
-					className={`${priceFilter ? "hidden" : "block"} flex flex-wrap gap-2 mx-0 justify-start items-center mb-20`}>
+					className={` flex flex-wrap gap-2 mx-0 justify-start items-center mb-20`}>
 					{!items && <div className="mt-20 text-red-700 text-3xl">Loading...</div>}
 					{price700.map((product) => (
 						<Product key={product.id} product={product} onAdd={onAdd}></Product>
