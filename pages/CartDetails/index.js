@@ -5,20 +5,15 @@ import Link from 'next/link';
 const Index = () => {
 	const {onAdd,onRemove, products, cartItems} = useContext(ProductContext);
 
-	const taxes = products[0].taxes.shipping_fee;
-	const vat =products[0].taxes.vat;
-	const discount = products[0].discount;
-	console.log(discount);
-
-
 	const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
-	const taxPrice = itemsPrice * taxes;
-	const shippingPrice = itemsPrice > 1000 ? 0 : vat;
+	const taxPrice = itemsPrice * 0.09;
+	const shippingPrice = itemsPrice > 1000 ? 0 : 20;
 	const totalPrice = itemsPrice + taxPrice + shippingPrice;
 
 
 	return (
 		<div className='pt-20 flex justify-center items-center'>
+			<p>test</p>
 			<div className='mt-12 mx-1 md:mx-12 rounded-md bg-stone-100 py-4 px-2 w-full md:w-3/5'>
 				<h2 className='my-4 text-2xl font-bold'>Cart Items</h2>
 				<div className='' id='cart'>
