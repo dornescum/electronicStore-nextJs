@@ -8,6 +8,9 @@ import {REMOVE_FROM_CART, ADD_TO_CART} from "../context/actions";
 import Header from "../components/UI/Header";
 import Layout from "../components/UI/Layout";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 const phoneApi = 'https://electronis-api.herokuapp.com/api/phones';
 
 function MyApp({Component, pageProps}) {

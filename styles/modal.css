@@ -1,0 +1,29 @@
+.modal{
+    animation: anim-modal .5s ease-in-out;
+}
+@keyframes anim-modal {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+        /*transform: translateX(-10px);*/
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+
+}
+.hidden-message{
+    animation: anim-message 3s ease-in-out;
+}
+@keyframes anim-message {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+
+}
