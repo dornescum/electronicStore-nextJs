@@ -67,7 +67,7 @@ function MyApp({Component, pageProps}) {
 
 		<Layout>
 			<Component {...pageProps} />
-			<Footer />
+			{/*<Footer />*/}
 		</Layout>
 
 	</ProductContext.Provider>;

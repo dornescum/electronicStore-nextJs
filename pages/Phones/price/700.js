@@ -7,7 +7,7 @@ import FilterByBrand from "../../../components/filters/FilterByBrand";
 
 const Ph700 = ({items}) => {
 	const {onAdd, cartItems} = useContext(ProductContext);
-	const [priceFilter, setPriceFilter] = useState(false);
+	// const [priceFilter, setPriceFilter] = useState(false);
 	const handleAllFilters = (num) => items.filter((item) => {
 		if (item.price.length === 0) {
 			return item;
@@ -15,15 +15,15 @@ const Ph700 = ({items}) => {
 		return item.price < num;
 	});
 	const price700 = handleAllFilters(700);
-	const handleFilterByPrice = (e) => {
-		setPriceFilter(true);
-	};
+	// const handleFilterByPrice = (e) => {
+	// 	setPriceFilter(true);
+	// };
 	const link = 'Phones';
 	const values =[1000,700,450,350];
 	const brands =['apple', 'samsung', 'sony', 'motorola', 'nokia', 'blackberry']
 
 	return (
-		<main className="flex font-dosis mx-60">
+		<main className="flex font-dosis md:mx-0 lg:mx-60 flex-col md:flex-row">
 			<section className="hidden lg:block  lg:basis-1/5">
 				<Link href="/Phones">
 					<a className='mt-0 pl-6 bg-zinc-50'>Remove All filters</a>

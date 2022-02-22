@@ -30,9 +30,9 @@ export default function Home({products}) {
 	// console.log(products);
 
 	return (
-		<main className="font-dosis lg:mx-60 relative">
-			<div className="relative">
-				<div className="flex flex-col md:flex-row">
+		<main className="font-dosis lg:mx-60">
+			<div className="">
+				<div className="flex flex-col md:flex-row relative">
 					<ul className="absolute top-0 left-4 z-10">
 						{electronicProducts.map((link) => {
 							return <div
@@ -47,35 +47,38 @@ export default function Home({products}) {
 					</ul>
 					<Image src="/895.jpg" alt="laptop" className="w-full object-fit h-[700px] rounded-sm" width="1920"
 						   height="990"/>
-				</div>
-				{/*==============*/}
-				<div
-					className="bottom-32 md:bottom-40 lg:bottom-[560px] md:left-4 w-full h-12 opacity-0 hover:opacity-100 duration-300
-						absolute  z-10 flex flex-col cursor-pointer">
-					<ul className=" flex justify-between items-center px-2">
-						<li className='flex'>
-							<Link href="/Phones">
-								<a className=" flex items-center justify-center">
-									<span className='pr-2'>ECommerce</span>
-									<AiFillHeart color='red' />
-								</a>
-							</Link>
 
-						</li>
-						<li className=''>
-							<Link href="/Phones">
-								<a className="mr-6 text-white">Phones</a>
-							</Link>
-						</li>
-					</ul>
+					{/*==============*/}
+					{/*<div className="bottom-32 md:bottom-40 lg:bottom-[560px] md:left-4 w-full h-12 opacity-0 hover:opacity-100 duration-300*/}
+					{/*	absolute  z-10 flex flex-col cursor-pointer">*/}
+					{/*	<ul className=" flex justify-between items-center px-2">*/}
+					{/*		<li className='flex'>*/}
+					{/*			<Link href="/Phones">*/}
+					{/*				<a className=" flex items-center justify-center">*/}
+					{/*					<span className='pr-2'>ECommerce</span>*/}
+					{/*					<AiFillHeart color='red' />*/}
+					{/*				</a>*/}
+					{/*			</Link>*/}
+
+					{/*		</li>*/}
+					{/*		<li className=''>*/}
+					{/*			<Link href="/Phones">*/}
+					{/*				<a className="mr-6 text-white">Phones</a>*/}
+					{/*			</Link>*/}
+					{/*		</li>*/}
+					{/*	</ul>*/}
+					{/*</div>*/}
+					{/*==============*/}
+
+
 				</div>
-				{/*==============*/}
+
 
 
 				<section className="my-1">
 					<SliderComponent />
 				</section>
-				<section className=''>
+				<section className='mx-0'>
 					<HomeFavorites items={products}/>
 				</section>
 			</div>

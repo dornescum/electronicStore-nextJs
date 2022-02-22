@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Index = () => {
 	const {onAdd,onRemove, products, cartItems} = useContext(ProductContext);
-
+	// todo add discount over 2000
 	const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
 	const taxPrice = itemsPrice * 0.09;
 	const shippingPrice = itemsPrice > 1000 ? 0 : 20;

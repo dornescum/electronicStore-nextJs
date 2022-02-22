@@ -19,7 +19,7 @@ const Apple = ({items}) => {
 	const brands =['apple', 'samsung', 'sony', 'motorola', 'nokia', 'blackberry']
 
 	return (
-		<main className="flex font-dosis mx-60">
+		<main className="flex font-dosis md:mx-0 lg:mx-60 flex-col md:flex-row">
 			<section className="hidden lg:block  lg:basis-1/5">
 				{/*<p className='mt-0 pl-6 bg-zinc-50'>Remove All filters</p>*/}
 				<Link href="/Phones">
