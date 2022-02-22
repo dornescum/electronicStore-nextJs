@@ -27,7 +27,7 @@ const electronicProducts = [
 
 export default function Home({products}) {
 	const {onAdd, cartItems,} = useContext(ProductContext);
-	console.log(products);
+	// console.log(products);
 
 	return (
 		<main className="font-dosis lg:mx-60 relative">

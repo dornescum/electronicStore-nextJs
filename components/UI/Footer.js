@@ -7,7 +7,8 @@ import Link from "next/link";
 const Footer = () => {
 	const year = new Date().getFullYear();
 	return (
-		<div className='bg-stone-50 w-full pl-60'>
+		// todo temporary fix footer position
+		<div className='bg-stone-50 w-full pl-60 absolute -bottom-20'>
 			<ul className='flex py-2 pl-4'>
 				<li className='p-1 '> © {year}</li>
 				<li className="p-1 flex items-center">
