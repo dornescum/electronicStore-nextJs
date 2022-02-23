@@ -38,13 +38,13 @@ export default function Header({countCartItems}) {
 				}
 				{/*Modal*/}
 				<div className="relative">
-					<div className={`absolute top-20 -left-32 md:-left-28 lg:left-80 w-96 h-80 flex items-center justify-center flex-col
+					<div className={`absolute top-20 -left-12 md:-left-28 lg:left-96  w-52 lg:w-[700px] h-48 lg:h-80 flex items-center justify-center flex-col
 					rounded-md bg-zinc-50 shadow-2xl border transition duration-700 ease-out  translate-y-2 modal
 					${showModal ? "hidden" : "block "}`}>
 						<button className="relative" onClick={() => {
 							setShowModal(!showModal);
 						}}>
-						<span className="absolute -top-28 -right-44 border">
+						<span className="absolute -top-5 lg:-top-32 -right-24 lg:-right-80 border">
 							<MdClose size="18"/>
 						</span>
 						</button>

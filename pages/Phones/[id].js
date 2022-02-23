@@ -8,6 +8,8 @@ import Link from "next/link";
 import Specs from "../../components/Specs/Specs";
 import {AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
 import Review from "../../components/Reviews/Review";
+import Image from 'next/image';
+
 
 
 const PhoneId = ({itemId}) => {
@@ -40,12 +42,12 @@ const PhoneId = ({itemId}) => {
 
 	console.log(reviews);
 	return (
-		<div className='font-dosis'>
-			<div className="flex flex-col md:flex-row pt-12 lg:pt-40 pb-8">
+		<div className='font-dosis mb-20'>
+			<div className="flex flex-col md:flex-row pt-12 lg:pt-20 pb-8">
 				<div className="basis-1/2 flex justify-center items-center">
 					<div className="flex flex-col justify-center items-center  w-full md:w-80 md:ml-2 lg:w-64
 		  h-96 md:h-80 lg:h-96 drop-shadow-md hover:drop-shadow-2xl ease-in duration-300">
-						<img src={mainImg} alt={title} className="object-cover h-96 w-96"/>
+						<Image src={mainImg} alt={title} width='1000' height='1000' className="object-cover h-96 w-96"/>
 					</div>
 				</div>
 				<div className="basis-1/2 flex flex-col items-start justify-center h-96">
@@ -59,20 +61,20 @@ const PhoneId = ({itemId}) => {
 					/>
 
 				</div>
-
 			</div>
-
+			{/*description*/}
 			<div className="mx-2 lg:mx-80 pt-2 lg:pt-12 pb-4">
 				<p className='text-2xl pb-2'>{title}</p>
 					<div className='leading-7'>
 						<p>{desc}</p>
 					</div>
-				{/*<div className='border-black border-t-2'>test</div>*/}
 			</div>
+			{/*specs*/}
 			<div className=" mx-2 lg:mx-80 pt-2 lg:pt-12 pb-4">
 					<Specs battery={batterySize} title={title} adaptor={adaptor} bluetooth={bluetooth}
 						   storage={individualStorage} manufacturer={manufacturer} os={os} seller={seller}/>
 			</div>
+			{/*reviews*/}
 			<div className="mx-2 lg:mx-80 pt-2 lg:pt-12 pb-4">
 				<div className="border-gray-300 border-t-2">
 					<div className={`flex justify-between my-2 mx-1 transition duration-700 ease-out hover:ease-in 
@@ -83,21 +85,13 @@ const PhoneId = ({itemId}) => {
 							{showReview ? <AiOutlineMinus/> : <AiOutlinePlus/>}
 						</div>
 					</div>
-
-
-					{showReview && <div>
+					{showReview && <div className='py-2'>
 						{reviews.map((el)=>{
-							return <Review key={el.id} name={el.name} rating={el.rating}/>
+							return <Review key={el.id} name={el.name} rating={el.rating} user_img={el.user_img}
+							date={el.date} review={el.review}/>
 						})}
 					</div>}
 				</div>
-
-
-
-				{/*{reviews.map((el)=>{*/}
-				{/*	return <Reviews key={el.id} name={el.name} review={el.review}*/}
-				{/*					src={el.img} date={el.date} rating={el.rating}  reviews={reviews}/>*/}
-				{/*})}*/}
 			</div>
 
 

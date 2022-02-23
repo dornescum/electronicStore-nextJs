@@ -11,9 +11,9 @@ const SingleProduct = (props) => {
 			<ul className='flex'>
 				{props.colors.map((col)=>{
 					return <li key={col} className=' py-2'>
-						<div>
+						<div className='px-1 cursor-pointer'>
 							<BsCircle color={col} />
-							<p className='px-2'>{col}</p>
+							{/*<p className='px-2'>{col}</p>*/}
 						</div>
 					</li>
 				})}
