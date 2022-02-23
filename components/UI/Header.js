@@ -18,8 +18,7 @@ export default function Header({countCartItems}) {
 	// const [showSidebar, setShowSidebar] = useState(false);
 	const [showCartInfo, setShowCartInfo] = useState(true);
 	const [showModal, setShowModal] = useState(false);
-	const modalMessage ="We don't collect your data";
-
+	const modalMessage = "We don't collect your data";
 
 
 	return (
@@ -37,18 +36,20 @@ export default function Header({countCartItems}) {
 						<MdOutlineMenuOpen size="22"/>
 					</button>
 				}
-
+				{/*Modal*/}
 				<div className="relative">
 					<div className={`absolute top-20 -left-32 md:-left-28 lg:left-80 w-96 h-80 flex items-center justify-center flex-col
 					rounded-md bg-zinc-50 shadow-2xl border transition duration-700 ease-out  translate-y-2 modal
 					${showModal ? "hidden" : "block "}`}>
-						<button className="relative" onClick={()=>{setShowModal(!showModal)}}>
+						<button className="relative" onClick={() => {
+							setShowModal(!showModal);
+						}}>
 						<span className="absolute -top-28 -right-44 border">
 							<MdClose size="18"/>
 						</span>
 						</button>
-						<p className="px-24 leading-5" id='modal'>
-							{modalMessage} <span className='hidden-message font-bold leading-9 '>anymore ...</span>
+						<p className="px-24 leading-5" id="modal">
+							{modalMessage} <span className="hidden-message font-bold leading-9 ">anymore ...</span>
 						</p>
 
 					</div>

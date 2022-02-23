@@ -1,0 +1,12 @@
+.specs{
+    animation: show-info 2s linear;
+    transition: all 3s ease-out;
+}
+@keyframes show-info {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
