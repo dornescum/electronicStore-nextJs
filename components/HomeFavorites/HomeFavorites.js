@@ -8,7 +8,7 @@ import Button from "../UI/Button";
 const HomeFavorites = (props) => {
 	const {product, onAdd} = props;
 
-	return <div className=" flex flex-col justify-center items-center">
+	return <div className=" flex flex-col justify-center items-center w-full md:w-80 lg:w-48  h-96 md:h-80 lg:h-60">
 		<div className=' flex justify-center items-center'>
 			<Link href={`/Favorites/${product.id}`}>
 				<a>
@@ -24,7 +24,8 @@ const HomeFavorites = (props) => {
 					{product.title}
 				</li>
 				<li className='flex items-center animate-ping pl-4 ' >
-					{product.favorite === true ? <AiFillHeart    color="#ff0a0a"/> : " "}
+					{/*{product.favorite === true ? <AiFillHeart    color="#ff0a0a"/> : " "}*/}
+					{product.favorite}
 				</li>
 			</ul>
 

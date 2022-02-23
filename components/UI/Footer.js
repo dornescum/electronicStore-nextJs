@@ -8,9 +8,11 @@ const Footer = () => {
 	const year = new Date().getFullYear();
 	return (
 		// todo temporary fix footer position
-		<div className='w-32 md:w-96 mt-8 absolute -bottom-20'>
+		<div className='w-32 md:w-96 mt-8 absolute bottom-0'>
 			<ul className='flex py-2 pl-4'>
-				<li className='p-1 '> © {year}</li>
+				<li className='p-1 flex items-center justify-center'>
+					<p className='flex items-center justify-center w-[60px]'>© {year}</p>
+					</li>
 				<li className="p-1 flex items-center">
 					<Link href='https://github.com/dornescum'  rel="noopener" target="_blank">
 						<a rel="noopener" target="_blank"><AiFillGithub /></a>

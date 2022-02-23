@@ -49,7 +49,7 @@ const SliderComponent = () => {
 		<div className='my-4'>
 			<p className='text-lg py-4 pl-6'> Flash deals</p>
 			<Slider {...settings}>
-				<div className="p-1" >
+				<div className="p-1 hover:bg-zinc-100 transition duration-300 ease-in-out" >
 					<Link href="/Phones">
 						<a>
 							<div className="flex items-center justify-center">
@@ -59,7 +59,7 @@ const SliderComponent = () => {
 						</a>
 					</Link>
 				</div>
-				<div className="p-1">
+				<div className="p-1 hover:bg-zinc-100 transition duration-300 ease-in-out">
 					<Link href="/Phones">
 						<a>
 							<div className="flex items-center justify-center">
@@ -69,7 +69,7 @@ const SliderComponent = () => {
 						</a>
 					</Link>
 				</div>
-				<div className="p-1">
+				<div className="p-1 hover:bg-zinc-100 transition duration-300 ease-in-out">
 					<Link href="/Phones">
 						<a>
 							<div className="flex items-center justify-center">
@@ -79,7 +79,7 @@ const SliderComponent = () => {
 						</a>
 					</Link>
 				</div>
-				<div className="p-1">
+				<div className="p-1 hover:bg-zinc-100 transition duration-300 ease-in-out">
 					<Link href="/Phones">
 						<a>
 							<div className="flex items-center justify-center">
@@ -89,7 +89,7 @@ const SliderComponent = () => {
 						</a>
 					</Link>
 				</div>
-				<div className="p-1">
+				<div className="p-1 hover:bg-zinc-100 transition duration-300 ease-in-out">
 					<Link href="/Phones">
 						<a>
 							<div className="flex items-center justify-center">
@@ -99,7 +99,7 @@ const SliderComponent = () => {
 						</a>
 					</Link>
 				</div>
-				<div className="p-1">
+				<div className="p-1 hover:bg-zinc-100 transition duration-300 ease-in-out">
 					<Link href="/Phones">
 						<a>
 							<div className="flex items-center justify-center">
@@ -109,7 +109,7 @@ const SliderComponent = () => {
 						</a>
 					</Link>
 				</div>
-				<div className="p-1">
+				<div className="p-1 hover:bg-zinc-100 transition duration-300 ease-in-out">
 					<Link href="/Phones">
 						<a>
 							<div className="flex items-center justify-center">

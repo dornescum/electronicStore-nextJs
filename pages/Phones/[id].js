@@ -6,7 +6,6 @@ import SingleProduct from "../../components/SingleProduct";
 import Product from "../../components/Product";
 import Link from "next/link";
 import Specs from "../../components/Specs/Specs";
-import Reviews from "../../components/Reviews/Reviews";
 import {AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
 import Review from "../../components/Reviews/Review";
 
@@ -42,7 +41,7 @@ const PhoneId = ({itemId}) => {
 	console.log(reviews);
 	return (
 		<div className='font-dosis'>
-			<div className="flex flex-col md:flex-row pt-40 pb-8">
+			<div className="flex flex-col md:flex-row pt-12 lg:pt-40 pb-8">
 				<div className="basis-1/2 flex justify-center items-center">
 					<div className="flex flex-col justify-center items-center  w-full md:w-80 md:ml-2 lg:w-64
 		  h-96 md:h-80 lg:h-96 drop-shadow-md hover:drop-shadow-2xl ease-in duration-300">
@@ -63,18 +62,18 @@ const PhoneId = ({itemId}) => {
 
 			</div>
 
-			<div className=" mx-80 pt-12 pb-12">
+			<div className="mx-2 lg:mx-80 pt-2 lg:pt-12 pb-4">
 				<p className='text-2xl pb-2'>{title}</p>
 					<div className='leading-7'>
 						<p>{desc}</p>
 					</div>
 				{/*<div className='border-black border-t-2'>test</div>*/}
 			</div>
-			<div className=" mx-80 pt-12 pb-32">
+			<div className=" mx-2 lg:mx-80 pt-2 lg:pt-12 pb-4">
 					<Specs battery={batterySize} title={title} adaptor={adaptor} bluetooth={bluetooth}
 						   storage={individualStorage} manufacturer={manufacturer} os={os} seller={seller}/>
 			</div>
-			<div className=" mx-80 pt-12 pb-32">
+			<div className="mx-2 lg:mx-80 pt-2 lg:pt-12 pb-4">
 				<div className="border-gray-300 border-t-2">
 					<div className={`flex justify-between my-2 mx-1 transition duration-700 ease-out hover:ease-in 
 			${showReview ? 'bg-zinc-200': ""}
@@ -91,9 +90,6 @@ const PhoneId = ({itemId}) => {
 							return <Review key={el.id} name={el.name} rating={el.rating}/>
 						})}
 					</div>}
-					{/*{reviews.map((item)=>{*/}
-					{/*	return <Review key={id} id={id} review={review} img={img} rating={rating} name={name} date={date}/>*/}
-					{/*})}*/}
 				</div>
 
 

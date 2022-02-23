@@ -5,9 +5,9 @@ const picture ='https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixl
 
 const Review = ({id, name, date, rating, review, img}) => {
 	return (
-		<div className="flex font-dosis md:mx-0 lg:mx-60 flex-col md:flex-row">
+		<div className="flex font-dosis mx-0 lg:mx-60 flex-col md:flex-row">
 			<div className=" basis-1 lg:basis-1/5" id={id}>
-				<div className='hidden lg:block'>
+				<div className=''>
 					{/*todo add img to user*/}
 					<Image src={img ? img: picture } alt={name} height='50' width='50'/>
 					<p>{name ? name : "N/A"}</p>

@@ -11,7 +11,7 @@ export default function Product(props) {
 
 	return (
 		<div className='flex flex-col bg-slate-50 w-full md:w-80 lg:w-48 md:ml-2
-		rounded-sm shadow-md mx-2  mt-2 md:mt-6  h-96 md:h-80 lg:h-[300px] drop-shadow-md hover:drop-shadow-2xl ease-in duration-300
+		rounded-sm shadow-md mx-2  mt-2 md:mt-6  h-96 md:h-80 lg:h-[300px] drop-shadow-sm hover:drop-shadow-md ease-in duration-300
 		font-dosis relative'>
 			<Link href={`/Phones/${product.id}`}>
 				<a>
