@@ -13,7 +13,7 @@ const Index = () => {
 
 	return (
 		<div className='pt-20 flex justify-center items-center'>
-			<p>test</p>
+
 			<div className='mt-12 mx-1 md:mx-12 rounded-md bg-stone-100 py-4 px-2 w-full md:w-3/5'>
 				<h2 className='my-4 text-2xl font-bold'>Cart Items</h2>
 				<div className='' id='cart'>

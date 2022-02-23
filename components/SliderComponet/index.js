@@ -2,6 +2,13 @@ import React from 'react';
 import Slider from "react-slick";
 import Link from "next/link";
 import Image from "next/image";
+import Iphone  from '../../assets/iphone_12.webp';
+import Samsung  from '../../assets/samsung_note.webp';
+import SamsungNote  from '../../assets/samsung.webp';
+import Sony  from '../../assets/sony.webp';
+import Motorola  from '../../assets/motorola.webp';
+import Blackberry  from '../../assets/blackberry.webp';
+import Nokia  from '../../assets/nokia.webp';
 
 const SliderComponent = () => {
 	const settings = {
@@ -39,14 +46,14 @@ const SliderComponent = () => {
 		]
 	};
 	return (
-		<div className=''>
+		<div className='my-4'>
 			<p className='text-lg py-4 pl-6'> Flash deals</p>
 			<Slider {...settings}>
 				<div className="p-1" >
-					<Link href="/">
+					<Link href="/Phones">
 						<a>
 							<div className="flex items-center justify-center">
-								<Image src='https://images.unsplash.com/photo-1645474906518-6542b42f9bef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60' alt='' width="200" height="100"
+								<Image src={Iphone} alt='iphone' width="200" height="100"
 									   className="rounded-sm m-1 md:m-0 h-48 w-48 "/>
 							</div>
 						</a>
@@ -56,47 +63,57 @@ const SliderComponent = () => {
 					<Link href="/Phones">
 						<a>
 							<div className="flex items-center justify-center">
-								<Image src='https://images.unsplash.com/photo-1645359493337-f315e4fa9698?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxM3x8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60' alt='' width="200" height="100"
+								<Image src={Samsung} alt='samsung' width="200" height="100"
 									   className="rounded-sm m-1 md:m-0 object-cover h-48 w-48"/>
 							</div>
 						</a>
 					</Link>
 				</div>
 				<div className="p-1">
-					<Link href="/pasta">
+					<Link href="/Phones">
 						<a>
 							<div className="flex items-center justify-center">
-								<Image src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2FyfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="" width="200" height="100"
+								<Image src={SamsungNote} alt="samsung note" width="200" height="100"
 									   className="rounded-sm m-1 md:m-0 object-cover h-48 w-48"/>
 							</div>
 						</a>
 					</Link>
 				</div>
 				<div className="p-1">
-					<Link href="/pork">
+					<Link href="/Phones">
 						<a>
 							<div className="flex items-center justify-center">
-								<Image src='https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FyfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60' alt='' width="200" height="100"
+								<Image src={Sony} alt='sony' width="200" height="100"
 									   className="rounded-sm m-1 md:m-0 object-cover h-48 w-48"/>
 							</div>
 						</a>
 					</Link>
 				</div>
 				<div className="p-1">
-					<Link href="/salads">
+					<Link href="/Phones">
 						<a>
 							<div className="flex items-center justify-center">
-								<Image src='https://images.unsplash.com/photo-1502877338535-766e1452684a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y2FyfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60' alt='' width="200" height="100"
+								<Image src={Nokia} alt='nokia' width="200" height="100"
 									   className="rounded-sm m-1 md:m-0 object-cover h-48 w-48"/>
 							</div>
 						</a>
 					</Link>
 				</div>
 				<div className="p-1">
-					<Link href="/desert">
+					<Link href="/Phones">
 						<a>
 							<div className="flex items-center justify-center">
-								<Image src="https://images.unsplash.com/photo-1643861623906-e43d87970419?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDF8cVBZc0R6dkpPWWN8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" alt="" width="200" height="100"
+								<Image src={Blackberry} alt="blackberry" width="200" height="100"
+									   className="rounded-sm m-1 md:m-0 object-cover h-48 w-48"/>
+							</div>
+						</a>
+					</Link>
+				</div>
+				<div className="p-1">
+					<Link href="/Phones">
+						<a>
+							<div className="flex items-center justify-center">
+								<Image src={Motorola} alt="motorola" width="200" height="100"
 									   className="rounded-sm m-1 md:m-0 object-cover h-48 w-48"/>
 							</div>
 						</a>

@@ -8,8 +8,8 @@ import Button from "../UI/Button";
 const HomeFavorites = (props) => {
 	const {product, onAdd} = props;
 
-	return <div className=" mx-0 ">
-		<div className=''>
+	return <div className=" flex flex-col justify-center items-center">
+		<div className=' flex justify-center items-center'>
 			<Link href={`/Phones/${product.id}`}>
 				<a>
 					<img className="object-cover h-48 lg:h-36 w-full md:w-48  z-10 bg-red-500"
@@ -18,7 +18,7 @@ const HomeFavorites = (props) => {
 				</a>
 			</Link>
 		</div>
-		<div className='w-full '>
+		<div className='w-full'>
 			<ul className='flex justify-start px-1'>
 				<li className={`py-4 md:py-1 text-xl pl-2 ${product.favorite === true ? "italic text-2xl":""}`}>
 					{product.title}

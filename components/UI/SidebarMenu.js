@@ -17,7 +17,7 @@ const electronicProducts = [
 
 const SidebarMenu = (props) => {
 	return (<aside className="fixed  z-50 transition-all
-		 text-gray-600 w-64 top-16 left-0 opacity-100 overflow-y-auto sidebar rounded-md shadow-md
+		 text-gray-600 w-full md:w-60 top-16 left-0 opacity-100 overflow-y-auto sidebar rounded-md shadow-md
 		fixed h-full  md:h-96">
 
 		<nav className=' rounded-md h-full md:h-96 bg-stone-50 pt-8'>
