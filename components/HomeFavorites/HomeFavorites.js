@@ -10,7 +10,7 @@ const HomeFavorites = (props) => {
 
 	return <div className=" flex flex-col justify-center items-center">
 		<div className=' flex justify-center items-center'>
-			<Link href={`/Phones/${product.id}`}>
+			<Link href={`/Favorites/${product.id}`}>
 				<a>
 					<img className="object-cover h-48 lg:h-36 w-full md:w-48  z-10 bg-red-500"
 						 src={product?.main_img.link}

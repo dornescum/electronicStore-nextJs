@@ -52,7 +52,7 @@ export default function Home({products}) {
 	);
 }
 export const getStaticProps = async () => {
-	const res = await fetch(`https://electronis-api.herokuapp.com/api/phones`);
+	const res = await fetch(`https://electronis-api.herokuapp.com/api/all`);
 	const products = await res.json();
 
 	return {
