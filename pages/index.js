@@ -1,14 +1,14 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import {ProductContext} from "../context/ProductContext";
-import {useContext} from "react";
+import React, {useContext} from "react";
 // import Slider from "react-slick";
 import Product from "../components/Product";
 import Link from "next/link";
 import FilterByPrice from "../components/filters/FilterByPrice";
 import FilterByBrand from "../components/filters/FilterByBrand";
 import SliderComponent from "../components/SliderComponet";
-import { AiFillHeart } from 'react-icons/ai';
+import {AiFillHeart} from 'react-icons/ai';
 
 import Photo1 from '../public/895.jpg';
 import Photo2 from '../assets/895.jpg';
@@ -29,6 +29,11 @@ export default function Home({products}) {
 	const {onAdd, cartItems,} = useContext(ProductContext);
 	// console.log(products);
 
+	const favoriteItems = products.filter((item) => {
+		return item.favorite
+	});
+	console.log(favoriteItems);
+
 	return (
 		<main className="font-dosis lg:mx-60">
 			<div className="">
@@ -47,39 +52,26 @@ export default function Home({products}) {
 					</ul>
 					<Image src="/895.jpg" alt="laptop" className="w-full object-fit h-[700px] rounded-sm" width="1920"
 						   height="990"/>
-
-					{/*==============*/}
-					{/*<div className="bottom-32 md:bottom-40 lg:bottom-[560px] md:left-4 w-full h-12 opacity-0 hover:opacity-100 duration-300*/}
-					{/*	absolute  z-10 flex flex-col cursor-pointer">*/}
-					{/*	<ul className=" flex justify-between items-center px-2">*/}
-					{/*		<li className='flex'>*/}
-					{/*			<Link href="/Phones">*/}
-					{/*				<a className=" flex items-center justify-center">*/}
-					{/*					<span className='pr-2'>ECommerce</span>*/}
-					{/*					<AiFillHeart color='red' />*/}
-					{/*				</a>*/}
-					{/*			</Link>*/}
-
-					{/*		</li>*/}
-					{/*		<li className=''>*/}
-					{/*			<Link href="/Phones">*/}
-					{/*				<a className="mr-6 text-white">Phones</a>*/}
-					{/*			</Link>*/}
-					{/*		</li>*/}
-					{/*	</ul>*/}
-					{/*</div>*/}
-					{/*==============*/}
-
-
 				</div>
 
 
-
 				<section className="my-1">
-					<SliderComponent />
+					<SliderComponent/>
 				</section>
-				<section className='mx-0'>
-					<HomeFavorites items={products}/>
+				<section className="mx-0 my-12">
+					<div className="pl-6">
+						<div className="flex items-center">
+							<span className="pr-2 my-4">ECommerce</span>
+							<AiFillHeart color="red"/>
+						</div>
+					</div>
+					<ul className='flex flex-wrap flex-row'>
+						{favoriteItems.map((product) => {
+							return <li key={product.id} className='mx-2  border drop-shadow-md hover:drop-shadow-2xl ease-in duration-300 '>
+								<HomeFavorites  product={product}  onAdd={onAdd}/>
+							</li>
+						})}
+					</ul>
 				</section>
 			</div>
 		</main>
