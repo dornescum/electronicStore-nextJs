@@ -46,7 +46,7 @@ export default function Home({products}) {
 
 			{/*?Favorites*/}
 			<div className="pl-6 mt-12">
-				<Link href='/Phones'>
+				<Link href='/Favorites'>
 					<a className='pr-2 my-4 '>
 						<div className="flex justify-start items-center">
 							<span className="pr-2 my-4 hover:bg-zinc-100 duration-300">ECommerce</span>
@@ -56,11 +56,11 @@ export default function Home({products}) {
 				</Link>
 
 			</div>
-			<section className="mx-0 lg:ml-4 mt-4 mb-4 flex flex-col  justify-center items-center">
+			<section className="mx-0  mt-4 mb-4 flex flex-col  justify-center items-center">
 				<ul className=" flex justify-center md:justify-start items-center flex-wrap flex-row w-full mb-20">
 					{favoriteItems.map((product) => {
 						return <li key={product.id}
-								   className="mx-1 mb-2 border drop-shadow-md hover:drop-shadow-2xl ease-in duration-300 ">
+								   className="mx-1 mb-2 md:mb-6 border drop-shadow-md hover:drop-shadow-2xl ease-in duration-300 ">
 							<HomeFavorites product={product} onAdd={onAdd}/>
 						</li>;
 					})}

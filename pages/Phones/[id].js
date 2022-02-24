@@ -16,10 +16,7 @@ const PhoneId = ({itemId}) => {
 	const {onAdd,  cartItems} = useContext(ProductContext);
 	const [showReview, setShowReview] = useState(false);
 
-	// console.log(itemId);
-	//
-	//
-	// console.log(itemId);
+
 	const title = itemId.message.title;
 	const price = itemId.message.price;
 	const id = itemId.message.id;
@@ -60,11 +57,8 @@ const PhoneId = ({itemId}) => {
 
 						{!itemId && <div className='mt-20 text-red-700 text-3xl'>Loading...</div> }
 						<SingleProduct title={title} price={price} subtitle={subtitle} short_desc={short_desc} onAdd={onAdd}
-									   colors={colors}
-						/>
+									   colors={colors}/>
 					</div>
-
-
 				</div>
 			</div>
 			{/*?description*/}
