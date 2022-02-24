@@ -31,22 +31,30 @@ export default function Home({products}) {
 		<main className="font-dosis lg:mx-60">
 			<Hero/>
 			<SliderComponent/>
-			{/*Best phones*/}
-			<div className="pl-6 mt-12">
-				<div className="flex justify-start items-center">
-					<span className="pr-2 my-4">Best phones</span>
-					{/*<AiFillHeart color="red"/>*/}
-				</div>
+			{/*?Best phones*/}
+			<div className="pl-4 mt-12 ">
+				<Link href='/Phones'>
+					<a className='pr-2 my-4 hover:bg-zinc-100 duration-300'>Best phones</a>
+				</Link>
+				{/*<div className="flex justify-start items-center">*/}
+				{/*	<span className="pr-2 my-4">Best phones</span>*/}
+				{/*	/!*<AiFillHeart color="red"/>*!/*/}
+				{/*</div>*/}
 			</div>
 			<HomePhones products={phonesProducts} />
 
 
-			{/*Favorites*/}
+			{/*?Favorites*/}
 			<div className="pl-6 mt-12">
-				<div className="flex justify-start items-center">
-					<span className="pr-2 my-4">ECommerce</span>
-					<AiFillHeart color="red"/>
-				</div>
+				<Link href='/Phones'>
+					<a className='pr-2 my-4 '>
+						<div className="flex justify-start items-center">
+							<span className="pr-2 my-4 hover:bg-zinc-100 duration-300">ECommerce</span>
+							<AiFillHeart color="red"/>
+						</div>
+					</a>
+				</Link>
+
 			</div>
 			<section className="mx-0 lg:ml-4 mt-4 mb-4 flex flex-col  justify-center items-center">
 				<ul className=" flex justify-center md:justify-start items-center flex-wrap flex-row w-full mb-20">
