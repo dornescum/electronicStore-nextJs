@@ -33,7 +33,8 @@ const PhoneId = ({itemId}) => {
 	const os = itemId.message.specs.os;
 	const seller = itemId.message.seller;
 	const reviews = itemId.message.reviews;
-
+	const tag = itemId.message.tag;
+	// console.log(tag);
 
 	const individualStorage =storage.map((el)=> <span key={el}>{el}/</span>);
 
@@ -50,14 +51,14 @@ const PhoneId = ({itemId}) => {
 				<div className="basis-1/2 flex flex-col items-start justify-center h-96">
 					<div className='pl-0 ml-0 md:pl-6 lg:mr-60'>
 						<div className=''>
-							<Link href="/Phones">
+							<Link href="/phone">
 								<a className='mt-0 ml-8 bg-zinc-100 px-4'>Phones</a>
 							</Link>
 						</div>
 
 						{!itemId && <div className='mt-20 text-red-700 text-3xl'>Loading...</div> }
 						<SingleProduct title={title} price={price} subtitle={subtitle} short_desc={short_desc} onAdd={onAdd}
-									   colors={colors}/>
+									   colors={colors} tag={tag}/>
 					</div>
 				</div>
 			</div>

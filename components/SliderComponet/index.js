@@ -50,7 +50,7 @@ const SliderComponent = () => {
 			<p className='text-lg py-4 pl-6'> Flash deals</p>
 			<Slider {...settings}>
 				<div className="p-1 hover:bg-zinc-100 transition duration-300 ease-in-out" >
-					<Link href="/Phones">
+					<Link href="/phone">
 						<a>
 							<div className="flex items-center justify-center">
 								<Image src={Iphone} alt='iphone' width="200" height="100"
@@ -60,7 +60,7 @@ const SliderComponent = () => {
 					</Link>
 				</div>
 				<div className="p-1 hover:bg-zinc-100 transition duration-300 ease-in-out">
-					<Link href="/Phones">
+					<Link href="/phone">
 						<a>
 							<div className="flex items-center justify-center">
 								<Image src={Samsung} alt='samsung' width="200" height="100"
@@ -70,7 +70,7 @@ const SliderComponent = () => {
 					</Link>
 				</div>
 				<div className="p-1 hover:bg-zinc-100 transition duration-300 ease-in-out">
-					<Link href="/Phones">
+					<Link href="/phone">
 						<a>
 							<div className="flex items-center justify-center">
 								<Image src={SamsungNote} alt="samsung note" width="200" height="100"
@@ -80,7 +80,7 @@ const SliderComponent = () => {
 					</Link>
 				</div>
 				<div className="p-1 hover:bg-zinc-100 transition duration-300 ease-in-out">
-					<Link href="/Phones">
+					<Link href="/phone">
 						<a>
 							<div className="flex items-center justify-center">
 								<Image src={Sony} alt='sony' width="200" height="100"
@@ -90,7 +90,7 @@ const SliderComponent = () => {
 					</Link>
 				</div>
 				<div className="p-1 hover:bg-zinc-100 transition duration-300 ease-in-out">
-					<Link href="/Phones">
+					<Link href="/phone">
 						<a>
 							<div className="flex items-center justify-center">
 								<Image src={Nokia} alt='nokia' width="200" height="100"
@@ -100,7 +100,7 @@ const SliderComponent = () => {
 					</Link>
 				</div>
 				<div className="p-1 hover:bg-zinc-100 transition duration-300 ease-in-out">
-					<Link href="/Phones">
+					<Link href="/phone">
 						<a>
 							<div className="flex items-center justify-center">
 								<Image src={Blackberry} alt="blackberry" width="200" height="100"
@@ -110,7 +110,7 @@ const SliderComponent = () => {
 					</Link>
 				</div>
 				<div className="p-1 hover:bg-zinc-100 transition duration-300 ease-in-out">
-					<Link href="/Phones">
+					<Link href="/phone">
 						<a>
 							<div className="flex items-center justify-center">
 								<Image src={Motorola} alt="motorola" width="200" height="100"

@@ -12,9 +12,9 @@ const Apple = ({items}) => {
 			return items.brand === str
 		})
 	}
-	const apple =filterByBrand("apple");
+	const samsung =filterByBrand("samsung");
 
-	const link = 'Phones';
+	const link = 'phone';
 	const values =[1000,700,450,350];
 	const brands =['apple', 'samsung', 'sony', 'motorola', 'nokia', 'blackberry']
 
@@ -22,7 +22,7 @@ const Apple = ({items}) => {
 		<main className="flex font-dosis md:mx-0 lg:mx-60 flex-col md:flex-row">
 			<section className="hidden lg:block  lg:basis-1/5">
 				{/*<p className='mt-0 pl-6 bg-zinc-50'>Remove All filters</p>*/}
-				<Link href="/Phones">
+				<Link href="/phone">
 					<a className='mt-0 pl-6 bg-zinc-50'>Remove All filters</a>
 				</Link>
 				<FilterByPrice link={link} value={values} />
@@ -30,13 +30,13 @@ const Apple = ({items}) => {
 
 			</section>
 			<section className="basis-1 lg:basis-4/5">
-				<Link href="/Phones">
+				<Link href="/phone">
 					<a className='mt-4 pl-4'>Phones</a>
 				</Link>
 				<div
 					className={` flex flex-wrap gap-2 mx-2 justify-start items-center mb-20`}>
 					{!items && <div className="mt-4 text-red-700 text-3xl">Loading...</div>}
-					{apple.map((product) => (
+					{samsung.map((product) => (
 						<Product key={product.id} product={product} onAdd={onAdd}></Product>
 					))}
 				</div>

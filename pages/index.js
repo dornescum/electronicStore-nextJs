@@ -31,22 +31,18 @@ export default function Home({products}) {
 		<main className="font-dosis lg:mx-60">
 			<Hero/>
 			<SliderComponent/>
-			{/*?Best phones*/}
+			{/*?Best phone*/}
 			<div className="pl-4 mt-12 ">
-				<Link href='/Phones'>
+				<Link href='/phone'>
 					<a className='pr-2 my-4 hover:bg-zinc-100 duration-300'>Best phones</a>
 				</Link>
-				{/*<div className="flex justify-start items-center">*/}
-				{/*	<span className="pr-2 my-4">Best phones</span>*/}
-				{/*	/!*<AiFillHeart color="red"/>*!/*/}
-				{/*</div>*/}
 			</div>
-			<HomePhones products={phonesProducts} />
+			<HomePhones products={phonesProducts}/>
 
 
-			{/*?Favorites*/}
-			<div className="pl-6 mt-12">
-				<Link href='/Favorites'>
+			{/*?favorites*/}
+			<div className="pl-4 mt-12">
+				<Link href='/favorites'>
 					<a className='pr-2 my-4 '>
 						<div className="flex justify-start items-center">
 							<span className="pr-2 my-4 hover:bg-zinc-100 duration-300">ECommerce</span>
@@ -59,7 +55,7 @@ export default function Home({products}) {
 			<section className="mx-0  mt-4 mb-4 flex flex-col  justify-center items-center">
 				<ul className=" flex justify-center md:justify-start items-center flex-wrap flex-row w-full mb-20">
 					{favoriteItems.map((product) => {
-						return <li key={product.id}
+						return <li key={product.id} id={product.id}
 								   className="mx-1 mb-2 md:mb-6 border drop-shadow-md hover:drop-shadow-2xl ease-in duration-300 ">
 							<HomeFavorites product={product} onAdd={onAdd}/>
 						</li>;

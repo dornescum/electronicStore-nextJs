@@ -7,8 +7,8 @@ import {MdChevronRight} from "react-icons/md";
 
 const electronicProducts = [
 	{id: "e1", title: "Home", link: "/"},
-	{id: "e2", title: "Phones", link: "/Phones"},
-	{id: "e3", title: "Laptops", link: "/"},
+	{id: "e2", title: "phone", link: "/phone"},
+	{id: "e3", title: "laptop", link: "/"},
 	{id: "e4", title: "Tablets", link: "/"},
 	{id: "e5", title: "Pc", link: "/"},
 	{id: "e6", title: "Tv", link: "/"},

@@ -23,7 +23,7 @@ const SingleProduct = (props) => {
 			<p className='py-2'>${props.price}</p>
 			{/*<p className='py-2'>#{props.subtitle}</p>*/}
 			<div className='py-2'>
-				<Link href={`/Phones/brands/${props.subtitle}`}>
+				<Link href={`/${props.tag}/brands/${props.subtitle}`}>
 					<a >#{props.subtitle}</a>
 				</Link>
 			</div >

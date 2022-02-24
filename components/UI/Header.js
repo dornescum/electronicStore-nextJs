@@ -88,7 +88,7 @@ export default function Header({countCartItems}) {
 								<BsCart size="18"/>
 								{countCartItems ? (
 									<button
-										className="bg-red-600 px-2 ml-2 rounded-full cursor-pointer text-white">{countCartItems}</button>
+										className="bg-red-600 px-3 ml-2 rounded-full cursor-pointer text-white">{countCartItems}</button>
 								) : (
 									''
 								)}

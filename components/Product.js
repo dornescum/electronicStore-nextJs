@@ -1,6 +1,7 @@
 import Button from "./UI/Button";
 import { BsStarFill } from 'react-icons/bs';
 import Link from "next/link";
+import Image from "next/image";
 import {AiFillHeart} from "react-icons/ai";
 
 
@@ -12,11 +13,11 @@ export default function Product(props) {
 	return (
 		<div className='flex flex-col bg-slate-50 w-full md:w-80 lg:w-48 md:ml-2
 		rounded-sm shadow-md mx-2  mt-2 md:mt-6  h-96 md:h-80 lg:h-[300px] drop-shadow-sm hover:drop-shadow-md ease-in duration-300
-		font-dosis relative'>
-			<Link href={`/Phones/${product.id}`}>
+		font-dosis relative' id={product.id}>
+			<Link href={`/${product.tag}/${product.id}`}>
 				<a>
-					<img className="object-cover h-48 lg:h-36 w-full absolute top-0" src={product?.main_img.link}
-						 loading='lazy'	 alt={product?.title} />
+					<Image className="object-cover h-48 lg:h-36 w-full absolute top-0" src={product?.main_img.link}
+						 loading='lazy'	 alt={product?.title} width='400' height='250'/>
 				</a>
 			</Link>
 
@@ -46,7 +47,7 @@ export default function Product(props) {
 				<div className=' md:mb-2 px-1'>
 					<ul className='flex  justify-between py-4 md:py-1 px-2'>
 						<li className='underline py-1'>
-							<Link href={`/Phones/${product.id}`}>
+							<Link href={`/${product.tag}/${product.id}`}>
 								<a>
 									Info
 								</a>

@@ -3,18 +3,20 @@ import {ProductContext} from "../../context/ProductContext";
 import Link from "next/link";
 import {AiFillHeart} from "react-icons/ai";
 import Button from "../UI/Button";
+import Image from "next/image";
+
 
 
 const HomeFavorites = (props) => {
 	const {product, onAdd} = props;
 
-	return <div className=" flex flex-col justify-center items-center w-full md:w-80 lg:w-48  h-96 md:h-80 lg:h-60">
+	return <div className=" flex flex-col justify-center items-center w-full md:w-80 lg:w-48  h-96 md:h-80 lg:h-60" id={product.id}>
 		<div className=' flex justify-center items-center'>
-			<Link href={`/Favorites/${product.id}`}>
+			<Link href={`/${product.tag}/${product.id}`}>
 				<a>
-					<img className="object-cover h-48 lg:h-36 w-full md:w-48  z-10 bg-red-500"
+					<Image className="object-cover h-48 lg:h-36 w-full md:w-48  z-10 bg-red-500"
 						 src={product?.main_img.link}
-						 loading="lazy" alt={product?.title}/>
+						 loading="lazy" alt={product?.title} height='250' width='400' />
 				</a>
 			</Link>
 		</div>
