@@ -3,6 +3,7 @@ import { BsStarFill } from 'react-icons/bs';
 import Link from "next/link";
 import Image from "next/image";
 import {AiFillHeart} from "react-icons/ai";
+const defaultImage ="https://images.unsplash.com/photo-1640622843377-6b5af9417e70?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80";
 
 
 export default function Product(props) {
@@ -16,7 +17,7 @@ export default function Product(props) {
 		font-dosis relative' id={product.id}>
 			<Link href={`/${product.tag}/${product.id}`}>
 				<a>
-					<Image className="object-cover h-48 lg:h-36 w-full absolute top-0" src={product?.main_img.link}
+					<Image className="object-cover h-48 lg:h-36 w-full absolute top-0" src={product?.main_img.link || defaultImage}
 						 loading='lazy'	 alt={product?.title} width='400' height='250'/>
 				</a>
 			</Link>
@@ -35,15 +36,9 @@ export default function Product(props) {
 						{product.favorite === true ? <AiFillHeart    color="#ff0a0a"/> : " "}
 					</li>
 				</ul>
-				<div className='text-sm px-1 flex'>
-					{/*{product.rating} &#9733;*/}
-					{/*{[...Array(product.rating)].map((star, index)=>{*/}
-					{/*	return <div key={index} className='flex'>*/}
-					{/*		<FaStar color='#ffda0a'/>*/}
-					{/*	</div>*/}
-					{/*})}*/}
-					<p></p>
-				</div>
+				{/*<div className='text-sm px-1 flex'>*/}
+				{/*	<p></p>*/}
+				{/*</div>*/}
 				<div className=' md:mb-2 px-1'>
 					<ul className='flex  justify-between py-4 md:py-1 px-2'>
 						<li className='underline py-1'>
@@ -59,7 +54,6 @@ export default function Product(props) {
 				</div>
 				<div className=' flex justify-center items-center bg-blue-400'>
 					<Button onClick={() => onAdd(product)}>Add to cart</Button>
-					{/*<button onClick={() => onAdd(product)} className='w-full'>Add to cart</button>*/}
 				</div>
 			</div>
 

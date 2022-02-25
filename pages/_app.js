@@ -21,14 +21,14 @@ function MyApp({Component, pageProps}) {
 	const [showSidebar, setShowSidebar] = useState(false);
 
 
-	useEffect(() => {
-		const getData = async () => {
-			const res = await fetch(phoneApi);
-			const data = await res.json();
-			setProducts(data);
-		};
-		getData();
-	}, []);
+	// useEffect(() => {
+	// 	const getData = async () => {
+	// 		const res = await fetch(phoneApi);
+	// 		const data = await res.json();
+	// 		setProducts(data);
+	// 	};
+	// 	getData();
+	// }, []);
 
 	const onAdd = (product) => {
 		const exist = cartItems.find((x) => x.id === product.id);

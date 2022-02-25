@@ -14,7 +14,7 @@ const HomeFavorites = (props) => {
 		<div className=' flex justify-center items-center'>
 			<Link href={`/${product.tag}/${product.id}`}>
 				<a>
-					<Image className="object-cover h-48 lg:h-36 w-full md:w-48  z-10 bg-red-500"
+					<Image className="object-cover h-48 lg:h-36 w-full md:w-48  z-10 bg-zinc-100"
 						 src={product?.main_img.link}
 						 loading="lazy" alt={product?.title} height='250' width='400' />
 				</a>
@@ -22,7 +22,7 @@ const HomeFavorites = (props) => {
 		</div>
 		<div className='w-full'>
 			<ul className='flex justify-start px-1'>
-				<li className={`py-4 md:py-1 text-xl pl-2 ${product.favorite === true ? "italic text-2xl":""}`}>
+				<li className={`py-4 md:py-1 text-base pl-2 ${product.favorite === true ? "italic text-2xl":""}`}>
 					{product.title}
 				</li>
 				<li className='flex items-center animate-ping pl-4 ' >

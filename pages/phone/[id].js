@@ -13,8 +13,9 @@ import Image from 'next/image';
 
 
 const PhoneId = ({itemId}) => {
-	const {onAdd,  cartItems} = useContext(ProductContext);
+	const {onAdd} = useContext(ProductContext);
 	const [showReview, setShowReview] = useState(false);
+	// const [loading, setLoading]=useState(false);
 
 
 	const title = itemId.message.title;
@@ -38,6 +39,7 @@ const PhoneId = ({itemId}) => {
 
 	const individualStorage =storage.map((el)=> <span key={el}>{el}/</span>);
 
+
 	// console.log(price.slice);
 	return (
 		<div className='font-dosis mb-20'>
@@ -56,7 +58,7 @@ const PhoneId = ({itemId}) => {
 							</Link>
 						</div>
 
-						{!itemId && <div className='mt-20 text-red-700 text-3xl'>Loading...</div> }
+						{/*{!itemId && <div className='mt-20 text-red-700 text-3xl'>Loading...</div> }*/}
 						<SingleProduct title={title} price={price} subtitle={subtitle} short_desc={short_desc} onAdd={onAdd}
 									   colors={colors} tag={tag}/>
 					</div>

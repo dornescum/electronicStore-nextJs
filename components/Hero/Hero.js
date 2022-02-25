@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const electronicProducts = [
 	{id: "e1", title: "Flash deals", link: "/phone"},
-	{id: "e2", title: "favorites", link: "/phone"},
+	{id: "e2", title: "Favorites", link: "/favorites"},
 	{id: "e3", title: "Offer of the day", link: "/phone"},
 	{id: "e4", title: "Discounted products", link: "/phone"},
 	{id: "e5", title: "Holiday offers", link: "/phone"},

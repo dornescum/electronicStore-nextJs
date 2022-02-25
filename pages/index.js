@@ -24,7 +24,8 @@ export default function Home({products}) {
 	const favoriteItems = products.filter((item) => {
 		return item.favorite;
 	});
-	const phonesProducts = products.filter((item => item.tag === "phone"))
+	const phonesProducts = products.filter((item => item.tag === "phone"));
+	// console.log(phonesProducts);
 
 
 	return (
