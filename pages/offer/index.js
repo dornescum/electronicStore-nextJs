@@ -1,46 +1,45 @@
 import React, {useContext, useState} from 'react';
-import {ProductContext} from "../../context/ProductContext";
-import Button from "../../components/UI/Button";
-import { BsCircle} from 'react-icons/bs';
-import SingleProduct from "../../components/SingleProduct";
-import Product from "../../components/Product";
 import Link from "next/link";
+import Image from "next/image";
+
+import FilterByPrice from "../../components/filters/FilterByPrice";
+import FilterByBrand from "../../components/filters/FilterByBrand";
+import Product from "../../components/Product";
+import {ProductContext} from "../../context/ProductContext";
+import SingleProduct from "../../components/SingleProduct";
 import Specs from "../../components/Specs/Specs";
 import {AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
 import Review from "../../components/Reviews/Review";
-import Image from 'next/image';
 
 
-
-const PhoneId = ({itemId}) => {
+const Index = ({items}) => {
 	const {onAdd} = useContext(ProductContext);
 	const [showReview, setShowReview] = useState(false);
-	// const [loading, setLoading]=useState(false);
-
-
-	const title = itemId.message.title;
-	const price = itemId.message.price;
-	const id = itemId.message.id;
-	const desc = itemId.message.description;
-	const subtitle = itemId.message.subtitle;
-	const mainImg = itemId.message.main_img.link;
-	const short_desc = itemId.message.short_description;
-	const colors = itemId.message.specs.colors;
-	const storage = itemId.message.specs.storage;
-	const batterySize = itemId.message.specs.battery_size;
-	const adaptor = itemId.message.specs.adaptor;
-	const bluetooth = itemId.message.specs.bluetooth;
-	const manufacturer = itemId.message.specs.manufacturer;
-	const os = itemId.message.specs.os;
-	const seller = itemId.message.seller;
-	const reviews = itemId.message.reviews;
-	const tag = itemId.message.tag;
-	// console.log(tag);
+	const offerDay =items[0];
+	// console.log(offerDay);
+// todo make random pick
+	const title = offerDay.title;
+	const price = offerDay.price;
+	const id = offerDay.id;
+	const desc = offerDay.description;
+	const subtitle = offerDay.subtitle;
+	const mainImg = offerDay.main_img.link;
+	const short_desc = offerDay.short_description;
+	const colors = offerDay.specs.colors;
+	const storage = offerDay.specs.storage;
+	const batterySize = offerDay.specs.battery_size;
+	const adaptor = offerDay.specs.adaptor;
+	const bluetooth = offerDay.specs.bluetooth;
+	const manufacturer = offerDay.specs.manufacturer;
+	const os = offerDay.specs.os;
+	const seller = offerDay.seller;
+	const reviews = offerDay.reviews;
+	const tag = offerDay.tag;
 
 	const individualStorage =storage.map((el)=> <span key={el}>{el}/</span>);
+	// console.log(individualStorage);
 
 
-	// console.log(price.slice);
 	return (
 		<div className='font-dosis mb-20'>
 			<div className="flex flex-col md:flex-row pt-12 lg:pt-8 pb-8">
@@ -99,19 +98,20 @@ const PhoneId = ({itemId}) => {
 			</div>
 		</div>
 
-	);
+	)
+
+
 };
 
-export default PhoneId;
-
-export async function getServerSideProps(context) {
-	const res = await fetch(`https://electronis-api.herokuapp.com/api/laptops/${context.params.id}`);
+export default Index;
+export const getStaticProps = async () => {
+	const res = await fetch(`https://electronis-api.herokuapp.com/api/all`);
 	// console.log(res);
-	const itemId = await res.json();
+	const items = await res.json();
 
 	return {
 		props: {
-			itemId
-		}
+			items,
+		},
 	};
-}
+};

@@ -9,11 +9,10 @@ const Specs = ({title, battery, adaptor, bluetooth, storage, manufacturer, os, s
 			${showInfo ? 'bg-zinc-200': ""}
 			`}>
 				<p>{title}</p>
-				<div onClick={() => setShowInfo(!showInfo)} className='flex items-center bg-gray-600 rounded-full px-1 text-white'>
+				<div onClick={() => setShowInfo(!showInfo)} className='flex items-center bg-gray-600 rounded-full px-1 text-white cursor-pointer'>
 					{showInfo ? <AiOutlineMinus/> : <AiOutlinePlus/>}
 				</div>
 			</div>
-			{/*todo odd:bg-gray-100*/}
 			{showInfo && <div className=" mx-1 transition duration-700 ease-out hover:ease-in specs">
 				<ul className="flex justify-between my-2">
 					<li>Battery size :</li>

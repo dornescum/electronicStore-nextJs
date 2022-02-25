@@ -1,11 +1,14 @@
 import React from 'react';
 import Link from "next/link";
 import Image from "next/image";
+import {AiFillHeart} from "react-icons/ai";
+
 
 const electronicProducts = [
-	{id: "e1", title: "Flash deals", link: "/phone"},
 	{id: "e2", title: "Favorites", link: "/favorites"},
-	{id: "e3", title: "Offer of the day", link: "/phone"},
+	{id: "e1", title: "Flash deals", link: "/flash"},
+
+	// {id: "e3", title: "Offer of the day", link: "/phone"},
 	{id: "e4", title: "Discounted products", link: "/phone"},
 	{id: "e5", title: "Holiday offers", link: "/phone"},
 	{id: "e6", title: "Resealed", link: "/phone"},
@@ -28,6 +31,34 @@ const Hero = () => {
 			</ul>
 			<Image src="/895.jpg" alt="laptop" className="w-full object-fit h-[700px] rounded-sm" width="1920"
 				   height="990"/>
+
+
+			<div
+				className=" bottom-0 w-full h-12 opacity-0 hover:opacity-100 duration-300 absolute  z-10 flex flex-col">
+				<ul className=" flex justify-between items-center px-2">
+					<li>
+						<div className=" flex text-white cursor-wait">
+							{/*<p className='text-2xl font-thin pl-4'> name</p>*/}
+							<Link href="/offer">
+								<a className="">
+									<div className="flex items-center justify-center pl-4">
+										<AiFillHeart color="red"/>
+										<span className="font-thin pl-2">Offer of the day</span>
+									</div>
+								</a>
+							</Link>
+
+						</div>
+					</li>
+					<li>
+						<Link href="/phone">
+							<a className="cursor-pointer bg-zinc-50 p-1" >Phones</a>
+						</Link>
+					</li>
+				</ul>
+			</div>
+
+
 		</div>
 	);
 };

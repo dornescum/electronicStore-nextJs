@@ -34,7 +34,7 @@ const HomeFavorites = (props) => {
 			<div className=' md:mb-2 px-1'>
 				<ul className='flex  justify-between py-4 md:py-1 px-2'>
 					<li className='underline py-1'>
-						<Link href={`/Phones/${product.id}`}>
+						<Link href={`/${product.tag}/${product.id}`}>
 							<a>
 								Info
 							</a>

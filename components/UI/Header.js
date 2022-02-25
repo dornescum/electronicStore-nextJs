@@ -42,7 +42,8 @@ export default function Header({countCartItems}) {
 					rounded-md bg-zinc-50 shadow-2xl border transition duration-700 ease-out  translate-y-2 modal
 					${showModal ? "hidden" : "block "}`}>
 						<ul>
-							<li className='flex justify-center items-center flex-col'>{modalMessage} <span className="hidden-message font-bold leading-9 ">anymore ...</span>
+							<li className='flex justify-center items-center flex-col'>{modalMessage}
+								<span className="hidden-message font-bold leading-9 ">anymore ...</span>
 							</li>
 							<li>
 								<button className="" onClick={() => {

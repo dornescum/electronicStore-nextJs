@@ -15,7 +15,7 @@ const Index = ({favoriteItems}) => {
 		<main className="flex font-dosis md:mx-0 lg:mx-60 flex-col md:flex-row">
 			<section className=" basis-1 lg:basis-1/5">
 				<div className='hidden lg:block'>
-					<Link href="/Phones">
+					<Link href="/phone">
 						<a className="mt-0 pl-6 bg-zinc-50">Brands</a>
 					</Link>
 					<FilterByBrand link={link} brands={brands}/>

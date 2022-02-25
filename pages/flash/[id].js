@@ -105,7 +105,7 @@ const PhoneId = ({itemId}) => {
 export default PhoneId;
 
 export async function getServerSideProps(context) {
-	const res = await fetch(`https://electronis-api.herokuapp.com/api/laptops/${context.params.id}`);
+	const res = await fetch(`https://electronis-api.herokuapp.com/api/all/${context.params.id}`);
 	// console.log(res);
 	const itemId = await res.json();
 

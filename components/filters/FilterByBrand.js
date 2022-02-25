@@ -9,36 +9,36 @@ const FilterByBrand = ({link,brands}) => {
 			</Link>
 			<ul className='py-1 w-full'>
 				<li>
-					<p>Filter by Price : </p>
+					<p>Filter by Brand : </p>
 				</li>
 				<li className='py-1 hover:bg-zinc-300 w-full transition duration-150 ease-out'>
 					<Link href={`/${link}/brands/${brands[0]}`}>
-						<a>Apple</a>
+						<a className='capitalize'>{brands[0]}</a>
 					</Link>
 				</li>
 				<li className='py-1 hover:bg-zinc-300 w-full transition duration-150 ease-out'>
 					<Link href={`/${link}/brands/${brands[1]}`}>
-						<a>Samsung</a>
+						<a className='capitalize'>{brands[1]}</a>
 					</Link>
 				</li>
 				<li className='py-1 hover:bg-zinc-300 w-full transition duration-150 ease-out'>
 					<Link href={`/${link}/brands/${brands[2]}`}>
-						<a>Sony</a>
+						<a className='capitalize'>{brands[2]}</a>
 					</Link>
 				</li>
 				<li className='py-1 hover:bg-zinc-300 w-full transition duration-150 ease-out'>
 					<Link href={`/${link}/brands/${brands[3]}`}>
-						<a>Motorola</a>
+						<a className='capitalize'>{brands[3]}</a>
 					</Link>
 				</li>
 				<li className='py-1 hover:bg-zinc-300 w-full transition duration-150 ease-out'>
 					<Link href={`/${link}/brands/${brands[4]}`}>
-						<a>Nokia</a>
+						<a className='capitalize'>{brands[4]}</a>
 					</Link>
 				</li>
 				<li className='py-1 hover:bg-zinc-300 w-full transition duration-150 ease-out'>
 					<Link href={`/${link}/brands/${brands[5]}`}>
-						<a>BlackBerry</a>
+						<a className='capitalize'>{brands[5]}</a>
 					</Link>
 				</li>
 
