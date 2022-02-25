@@ -1,48 +1,46 @@
 import React, {useContext, useState} from 'react';
-import Link from "next/link";
-import Image from "next/image";
-
-import FilterByPrice from "../../components/filters/FilterByPrice";
-import FilterByBrand from "../../components/filters/FilterByBrand";
-import Product from "../../components/Product";
 import {ProductContext} from "../../context/ProductContext";
+import Button from "../../components/UI/Button";
+import { BsCircle} from 'react-icons/bs';
 import SingleProduct from "../../components/SingleProduct";
+import Product from "../../components/Product";
+import Link from "next/link";
 import Specs from "../../components/Specs/Specs";
 import {AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
 import Review from "../../components/Reviews/Review";
+import Image from 'next/image';
 
 
-const Index = ({items}) => {
+
+const PhoneId = ({itemId}) => {
 	const {onAdd} = useContext(ProductContext);
 	const [showReview, setShowReview] = useState(false);
-	const num =Math.floor(Math.random()*10);
-	// console.log(num);
+	// const [loading, setLoading]=useState(false);
 
-	const offerDay =items[num];
-	// console.log(offerDay);
-// todo make random pick
-	const title = offerDay.title;
-	const price = offerDay.price;
-	const id = offerDay.id;
-	const desc = offerDay.description;
-	const subtitle = offerDay.subtitle;
-	const mainImg = offerDay.main_img.link;
-	const short_desc = offerDay.short_description;
-	const colors = offerDay.specs.colors;
-	const storage = offerDay.specs.storage;
-	const batterySize = offerDay.specs.battery_size;
-	const adaptor = offerDay.specs.adaptor;
-	const bluetooth = offerDay.specs.bluetooth;
-	const manufacturer = offerDay.specs.manufacturer;
-	const os = offerDay.specs.os;
-	const seller = offerDay.seller;
-	const reviews = offerDay.reviews;
-	const tag = offerDay.tag;
+
+	const title = itemId.message.title;
+	const price = itemId.message.price;
+	const id = itemId.message.id;
+	const desc = itemId.message.description;
+	const subtitle = itemId.message.subtitle;
+	const mainImg = itemId.message.main_img.link;
+	const short_desc = itemId.message.short_description;
+	const colors = itemId.message.specs.colors;
+	const storage = itemId.message.specs.storage;
+	const batterySize = itemId.message.specs.battery_size;
+	const adaptor = itemId.message.specs.adaptor;
+	const bluetooth = itemId.message.specs.bluetooth;
+	const manufacturer = itemId.message.specs.manufacturer;
+	const os = itemId.message.specs.os;
+	const seller = itemId.message.seller;
+	const reviews = itemId.message.reviews;
+	const tag = itemId.message.tag;
+	// console.log(tag);
 
 	const individualStorage =storage.map((el)=> <span key={el}>{el}/</span>);
-	// console.log(individualStorage);
 
 
+	// console.log(price.slice);
 	return (
 		<div className='font-dosis mb-20'>
 			<div className="flex flex-col md:flex-row pt-12 lg:pt-8 pb-8">
@@ -55,8 +53,8 @@ const Index = ({items}) => {
 				<div className="basis-1/2 flex flex-col items-start justify-center h-96">
 					<div className='pl-0 ml-0 md:pl-6 lg:mr-60'>
 						<div className=''>
-							<Link href="/favorites">
-								<a className='mt-0 ml-8 bg-zinc-100 px-4'>Favorites</a>
+							<Link href={`/${tag}`}>
+								<a className='mt-0 ml-8 bg-zinc-100 px-4'>{tag}</a>
 							</Link>
 						</div>
 
@@ -101,20 +99,19 @@ const Index = ({items}) => {
 			</div>
 		</div>
 
-	)
-
-
+	);
 };
 
-export default Index;
-export const getStaticProps = async () => {
-	const res = await fetch(`https://electronis-api.herokuapp.com/api/all`);
+export default PhoneId;
+
+export async function getServerSideProps(context) {
+	const res = await fetch(`https://electronis-api.herokuapp.com/api/all/${context.params.id}`);
 	// console.log(res);
-	const items = await res.json();
+	const itemId = await res.json();
 
 	return {
 		props: {
-			items,
-		},
+			itemId
+		}
 	};
-};
+}

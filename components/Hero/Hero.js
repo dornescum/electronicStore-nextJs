@@ -9,9 +9,9 @@ const electronicProducts = [
 	{id: "e1", title: "Flash deals", link: "/flash"},
 
 	// {id: "e3", title: "Offer of the day", link: "/phone"},
-	{id: "e4", title: "Discounted products", link: "/phone"},
-	{id: "e5", title: "Holiday offers", link: "/phone"},
-	{id: "e6", title: "Resealed", link: "/phone"},
+	{id: "e4", title: "Discounted products", link: "/discount"},
+	{id: "e5", title: "Holiday offers", link: "/holidays"},
+	// {id: "e6", title: "Resealed", link: "/phone"},
 ];
 
 const Hero = () => {
@@ -20,7 +20,7 @@ const Hero = () => {
 			<ul className="absolute top-0 left-4 z-10">
 				{electronicProducts.map((link) => {
 					return <div
-						className="hidden md:block md:py-2 md:mb-0 md:mt-1 hover:bg-zinc-100 w-full transition duration-150 ease-out"
+						className="block py-1 md:py-2 md:mb-0 md:mt-1 hover:bg-zinc-100 w-full transition duration-150 ease-out"
 						key={link.id} data-testid={link.id}>
 						<Link href={link.link}>
 							<a className="flex justify-start pl-2 text-white"
@@ -34,7 +34,7 @@ const Hero = () => {
 
 
 			<div
-				className=" bottom-0 w-full h-12 opacity-0 hover:opacity-100 duration-300 absolute  z-10 flex flex-col">
+				className=" bottom-0 w-full h-8 md:h-12 opacity-0 hover:opacity-100 duration-300 absolute  z-10 flex flex-col">
 				<ul className=" flex justify-between items-center px-2">
 					<li>
 						<div className=" flex text-white cursor-wait">
