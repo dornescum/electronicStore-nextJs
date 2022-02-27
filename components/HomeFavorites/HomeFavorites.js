@@ -1,7 +1,5 @@
-import React, {useContext} from 'react';
-import {ProductContext} from "../../context/ProductContext";
+import React from 'react';
 import Link from "next/link";
-import {AiFillHeart} from "react-icons/ai";
 import Button from "../UI/Button";
 import Image from "next/image";
 

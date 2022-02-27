@@ -1,19 +1,12 @@
 import React, {useContext, useState} from 'react';
 import Link from "next/link";
-import Image from "next/image";
-
-import FilterByPrice from "../../components/filters/FilterByPrice";
-import FilterByBrand from "../../components/filters/FilterByBrand";
 import Product from "../../components/Product";
 import {ProductContext} from "../../context/ProductContext";
 
 
 const Index = ({items}) => {
 	const {onAdd} = useContext(ProductContext);
-	// console.log(items);
 	const holidaySale = items.filter((item)=> item.discount > 0 && item.flash_sale === true);
-	// console.log(holidaySale);
-	const link = 'laptop';
 	return (
 		<main className="flex font-dosis md:mx-0 lg:mx-60 flex-col md:flex-row">
 			<section className=" basis-1 lg:basis-1/5">

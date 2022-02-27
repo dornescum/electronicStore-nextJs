@@ -6,8 +6,7 @@ import FilterByPrice from "../../../components/filters/FilterByPrice";
 import FilterByBrand from "../../../components/filters/FilterByBrand";
 
 const Ph700 = ({items}) => {
-	const {onAdd, cartItems} = useContext(ProductContext);
-	// const [priceFilter, setPriceFilter] = useState(false);
+	const {onAdd} = useContext(ProductContext);
 	const handleAllFilters = (num) => items.filter((item) => {
 		if (item.price.length === 0) {
 			return item;
@@ -15,9 +14,7 @@ const Ph700 = ({items}) => {
 		return item.price < num;
 	});
 	const price450 = handleAllFilters(450);
-	// const handleFilterByPrice = (e) => {
-	// 	setPriceFilter(true);
-	// };
+
 
 	const link = 'phone';
 	const values =[1000,700,450,350];

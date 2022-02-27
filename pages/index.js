@@ -1,31 +1,20 @@
-import Head from 'next/head';
-import Image from 'next/image';
 import {ProductContext} from "../context/ProductContext";
 import React, {useContext} from "react";
-// import Slider from "react-slick";
-import Product from "../components/Product";
 import Link from "next/link";
-import FilterByPrice from "../components/filters/FilterByPrice";
-import FilterByBrand from "../components/filters/FilterByBrand";
 import SliderComponent from "../components/SliderComponet";
 import Hero from '../components/Hero/Hero';
 import {AiFillHeart} from 'react-icons/ai';
-
-import Photo1 from '../public/895.jpg';
-import Photo2 from '../assets/895.jpg';
 import HomeFavorites from "../components/HomeFavorites/HomeFavorites";
 import Footer from "../components/UI/Footer";
 import HomePhones from "../components/HomePhones/HomePhones";
 
 
 export default function Home({products}) {
-	const {onAdd, cartItems,} = useContext(ProductContext);
+	const {onAdd} = useContext(ProductContext);
+	// console.log(products);
 
-	const favoriteItems = products.filter((item) => {
-		return item.favorite;
-	});
-	const phonesProducts = products.filter((item => item.tag === "phone"));
-	// console.log(phonesProducts);
+	const favoriteItems = products.filter((item) => item.favorite).slice(0,10);
+	const phonesProducts = products.filter((item => item.tag === "phone")).slice(0,10);
 
 
 	return (
@@ -64,7 +53,7 @@ export default function Home({products}) {
 				</ul>
 			</section>
 			{/*==========*/}
-			<Footer />
+			{/*<Footer />*/}
 		</main>
 	);
 }

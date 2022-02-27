@@ -21,8 +21,7 @@ const Review = ({id, name, date, rating, review, user_img, title_review}) => {
 			<div className="lg:basis-4/5">
 				<div className='pl-6 pt-2'>
 					<p className='font-bold py-1'>{title_review? title_review : "N/A"}</p>
-					{/*<p>{rating ? rating : "N/A" }</p>*/}
-					{/*{product.rating} &#9733;*/}
+
 					<div className='flex py-1'>
 						{[...Array(rating)].map((star, index)=>{
 							return <div key={index} className='flex flex-row'>

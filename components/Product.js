@@ -1,5 +1,4 @@
 import Button from "./UI/Button";
-import { BsStarFill } from 'react-icons/bs';
 import Link from "next/link";
 import Image from "next/image";
 import {AiFillHeart} from "react-icons/ai";
@@ -36,9 +35,7 @@ export default function Product(props) {
 						{product.favorite === true ? <AiFillHeart    color="#ff0a0a"/> : " "}
 					</li>
 				</ul>
-				{/*<div className='text-sm px-1 flex'>*/}
-				{/*	<p></p>*/}
-				{/*</div>*/}
+
 				<div className=' md:mb-2 px-1'>
 					<ul className='flex  justify-between py-4 md:py-1 px-2'>
 						<li className='underline py-1'>

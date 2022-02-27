@@ -1,10 +1,7 @@
 import React, {useContext} from 'react';
-import HomeFavorites from "../HomeFavorites/HomeFavorites";
 import {ProductContext} from "../../context/ProductContext";
-import Product from "../Product";
 import Link from "next/link";
 import Image from "next/image";
-import {AiFillHeart} from "react-icons/ai";
 import {BsStarFill} from "react-icons/bs";
 import Button from "../UI/Button";
 

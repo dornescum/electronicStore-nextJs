@@ -2,13 +2,11 @@ import React, {useContext, useState} from 'react';
 import Product from "../../components/Product";
 import {ProductContext} from "../../context/ProductContext";
 import Link from "next/link";
-import Layout from "../../components/UI/Layout";
 import FilterByPrice from "../../components/filters/FilterByPrice";
 import FilterByBrand from "../../components/filters/FilterByBrand";
 
 const Index = ({items}) => {
-	const {onAdd, cartItems} = useContext(ProductContext);
-	// console.log(items);
+	const {onAdd} = useContext(ProductContext);
 	const link = 'phone';
 	const values = [1000, 700, 450, 350];
 	const brands = ['apple', 'samsung', 'sony', 'motorola', 'nokia', 'blackberry'];

@@ -9,7 +9,7 @@ const Footer = () => {
 	return (
 		// todo temporary fix footer position
 		<div className='w-32 md:w-96 mt-8 absolute bottom-0'>
-			<ul className='flex py-2 pl-4'>
+			<ul className='flex py-2 pl-2 md:pl-2 lg:pl-60'>
 				<li className='p-1 flex items-center justify-center'>
 					<p className='flex items-center justify-center w-[60px]'>© {year}</p>
 					</li>

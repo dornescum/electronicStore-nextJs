@@ -1,9 +1,6 @@
 import React, {useContext, useState} from 'react';
 import {ProductContext} from "../../context/ProductContext";
-import Button from "../../components/UI/Button";
-import { BsCircle} from 'react-icons/bs';
 import SingleProduct from "../../components/SingleProduct";
-import Product from "../../components/Product";
 import Link from "next/link";
 import Specs from "../../components/Specs/Specs";
 import {AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
@@ -13,7 +10,7 @@ import Image from 'next/image';
 
 
 const PhoneId = ({itemId}) => {
-	const {onAdd,  cartItems} = useContext(ProductContext);
+	const {onAdd} = useContext(ProductContext);
 	const [showReview, setShowReview] = useState(false);
 
 
@@ -33,11 +30,8 @@ const PhoneId = ({itemId}) => {
 	const os = itemId.message.specs.os;
 	const seller = itemId.message.seller;
 	const reviews = itemId.message.reviews;
-
-
 	const individualStorage =storage.map((el)=> <span key={el}>{el}/</span>);
 
-	// console.log(price.slice);
 	return (
 		<div className='font-dosis mb-20'>
 			<div className="flex flex-col md:flex-row pt-12 lg:pt-8 pb-8">
@@ -80,7 +74,8 @@ const PhoneId = ({itemId}) => {
 			${showReview ? 'bg-zinc-200': ""}
 			`}>
 						<p>Reviews</p>
-						<div onClick={() => setShowReview(!showReview)} className='flex items-center bg-gray-600 rounded-full px-1 text-white'>
+						<div onClick={() => setShowReview(!showReview)} className='flex items-center bg-gray-600
+						rounded-full px-1 text-white cursor-pointer'>
 							{showReview ? <AiOutlineMinus/> : <AiOutlinePlus/>}
 						</div>
 					</div>

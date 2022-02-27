@@ -2,9 +2,6 @@ import React, {useContext, useState} from 'react';
 import Link from "next/link";
 import Image from "next/image";
 
-import FilterByPrice from "../../components/filters/FilterByPrice";
-import FilterByBrand from "../../components/filters/FilterByBrand";
-import Product from "../../components/Product";
 import {ProductContext} from "../../context/ProductContext";
 import SingleProduct from "../../components/SingleProduct";
 import Specs from "../../components/Specs/Specs";
@@ -16,11 +13,9 @@ const Index = ({items}) => {
 	const {onAdd} = useContext(ProductContext);
 	const [showReview, setShowReview] = useState(false);
 	const num =Math.floor(Math.random()*10);
-	// console.log(num);
 
 	const offerDay =items[num];
-	// console.log(offerDay);
-// todo make random pick
+
 	const title = offerDay.title;
 	const price = offerDay.price;
 	const id = offerDay.id;
@@ -40,7 +35,6 @@ const Index = ({items}) => {
 	const tag = offerDay.tag;
 
 	const individualStorage =storage.map((el)=> <span key={el}>{el}/</span>);
-	// console.log(individualStorage);
 
 
 	return (

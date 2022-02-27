@@ -1,9 +1,6 @@
 import React, {useContext, useState} from 'react';
 import {ProductContext} from "../../context/ProductContext";
-import Button from "../../components/UI/Button";
-import { BsCircle} from 'react-icons/bs';
 import SingleProduct from "../../components/SingleProduct";
-import Product from "../../components/Product";
 import Link from "next/link";
 import Specs from "../../components/Specs/Specs";
 import {AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
@@ -15,7 +12,6 @@ import Image from 'next/image';
 const PhoneId = ({itemId}) => {
 	const {onAdd} = useContext(ProductContext);
 	const [showReview, setShowReview] = useState(false);
-	// const [loading, setLoading]=useState(false);
 
 
 	const title = itemId.message.title;
@@ -35,12 +31,10 @@ const PhoneId = ({itemId}) => {
 	const seller = itemId.message.seller;
 	const reviews = itemId.message.reviews;
 	const tag = itemId.message.tag;
-	// console.log(tag);
 
 	const individualStorage =storage.map((el)=> <span key={el}>{el}/</span>);
 
 
-	// console.log(price.slice);
 	return (
 		<div className='font-dosis mb-20'>
 			<div className="flex flex-col md:flex-row pt-12 lg:pt-8 pb-8">

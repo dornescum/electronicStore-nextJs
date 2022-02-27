@@ -7,11 +7,8 @@ import {AiFillHeart} from "react-icons/ai";
 const electronicProducts = [
 	{id: "e2", title: "Favorites", link: "/favorites"},
 	{id: "e1", title: "Flash deals", link: "/flash"},
-
-	// {id: "e3", title: "Offer of the day", link: "/phone"},
 	{id: "e4", title: "Discounted products", link: "/discount"},
 	{id: "e5", title: "Holiday offers", link: "/holidays"},
-	// {id: "e6", title: "Resealed", link: "/phone"},
 ];
 
 const Hero = () => {
@@ -34,11 +31,10 @@ const Hero = () => {
 
 
 			<div
-				className=" bottom-0 w-full h-8 md:h-12 opacity-0 hover:opacity-100 duration-300 absolute  z-10 flex flex-col">
+				className=" bottom-0 w-full h-8 md:h-12 opacity-20 hover:opacity-100 duration-300 absolute  z-10 flex flex-col">
 				<ul className=" flex justify-between items-center px-2">
 					<li>
 						<div className=" flex text-white cursor-wait">
-							{/*<p className='text-2xl font-thin pl-4'> name</p>*/}
 							<Link href="/offer">
 								<a className="">
 									<div className="flex items-center justify-center pl-4">

@@ -1,15 +1,12 @@
 import React,{useContext} from 'react';
 import Link from "next/link";
-import FilterByPrice from "../../components/filters/FilterByPrice";
 import FilterByBrand from "../../components/filters/FilterByBrand";
 import Product from "../../components/Product";
 import {ProductContext} from "../../context/ProductContext";
 
 const Index = ({favoriteItems}) => {
-	const {onAdd, cartItems} = useContext(ProductContext);
-	// console.log(favoriteItems);
+	const {onAdd} = useContext(ProductContext);
 	const link = 'phone';
-	// const values = [1000, 700, 450, 350];
 	const brands = ['apple', 'samsung', 'sony', 'motorola', 'nokia', 'blackberry'];
 	return (
 		<main className="flex font-dosis md:mx-0 lg:mx-60 flex-col md:flex-row">

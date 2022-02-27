@@ -1,9 +1,6 @@
 import React, {useContext, useState} from 'react';
 import {ProductContext} from "../../context/ProductContext";
-import Button from "../../components/UI/Button";
-import { BsCircle} from 'react-icons/bs';
 import SingleProduct from "../../components/SingleProduct";
-import Product from "../../components/Product";
 import Link from "next/link";
 import Specs from "../../components/Specs/Specs";
 import {AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
@@ -15,8 +12,7 @@ import Image from 'next/image';
 const PhoneId = ({itemId}) => {
 	const {onAdd} = useContext(ProductContext);
 	const [showReview, setShowReview] = useState(false);
-	// const [loading, setLoading]=useState(false);
-	// console.log(itemId);
+
 
 	const title = itemId.message.title;
 	const price = itemId.message.price;
@@ -35,13 +31,10 @@ const PhoneId = ({itemId}) => {
 	const seller = itemId.message.seller;
 	const reviews = itemId.message.reviews;
 	const tag = itemId.message.tag;
-	// console.log(tag);
-
 	const individualStorage =storage.map((el)=> <span key={el}>{el}/</span>);
 
-
-	// console.log(price.slice);
 	return (
+
 		<div className='font-dosis mb-20'>
 			<div className="flex flex-col md:flex-row pt-12 lg:pt-8 pb-8">
 				<div className="basis-1/2 flex justify-center items-center">
@@ -79,11 +72,12 @@ const PhoneId = ({itemId}) => {
 			{/*?reviews*/}
 			<div className="mx-2 lg:mx-60 pt-2 lg:pt-12 pb-4">
 				<div className="border-gray-300 border-t-2">
-					<div className={`flex justify-between my-2 mx-1 transition duration-700 ease-out hover:ease-in 
+					<div className={`flex justify-between my-2 mx-1 transition duration-700 ease-out hover:ease-in
 			${showReview ? 'bg-zinc-200': ""}
 			`}>
 						<p>Reviews</p>
-						<div onClick={() => setShowReview(!showReview)} className='flex items-center bg-gray-600 rounded-full px-1 text-white'>
+						<div onClick={() => setShowReview(!showReview)} className='flex items-center
+						bg-gray-600 rounded-full px-1 text-white cursor-pointer'>
 							{showReview ? <AiOutlineMinus/> : <AiOutlinePlus/>}
 						</div>
 					</div>
@@ -102,20 +96,6 @@ const PhoneId = ({itemId}) => {
 };
 
 export default PhoneId;
-
-// export async function getServerSideProps(context) {
-// 	const res = await fetch(`https://electronis-api.herokuapp.com/api/phones/${context.params.id}`);
-// 	// console.log(res);
-// 	const itemId = await res.json();
-//
-// 	return {
-// 		props: {
-// 			itemId
-// 		}
-// 	};
-// }
-
-
 
 
 let url = 'https://electronis-api.herokuapp.com/api/phones/';

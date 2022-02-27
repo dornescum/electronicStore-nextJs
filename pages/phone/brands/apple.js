@@ -6,7 +6,7 @@ import FilterByPrice from "../../../components/filters/FilterByPrice";
 import FilterByBrand from "../../../components/filters/FilterByBrand";
 
 const Apple = ({items}) => {
-	const {onAdd, cartItems} = useContext(ProductContext);
+	const {onAdd} = useContext(ProductContext);
 	const filterByBrand =(str)=>{
 		return items.filter((items)=> {
 			return items.brand === str

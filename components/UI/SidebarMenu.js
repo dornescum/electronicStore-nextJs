@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from "next/link";
-import {MdChevronRight} from "react-icons/md";
-// import Logo from '../Logo/Logo'
+
 
 
 
@@ -9,9 +8,9 @@ const electronicProducts = [
 	{id: "e1", title: "Home", link: "/"},
 	{id: "e2", title: "Phones", link: "/phone"},
 	{id: "e3", title: "Laptops", link: "/laptop"},
-	{id: "e4", title: "Tablets", link: "/"},
-	{id: "e5", title: "Pc", link: "/"},
-	{id: "e6", title: "Tv", link: "/"},
+	{id: "e4", title: "Tablets", link: "/tablet"},
+	// {id: "e5", title: "Pc", link: "/"},
+	{id: "e6", title: "Tv", link: "/tv"},
 
 ];
 
