@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useRef} from 'react';
 import {ProductContext} from "../../context/ProductContext";
 import SingleProduct from "../../components/SingleProduct";
 import Link from "next/link";
@@ -13,6 +13,19 @@ const PhoneId = ({itemId}) => {
 	const {onAdd} = useContext(ProductContext);
 	const [showReview, setShowReview] = useState(false);
 	const [data, setData]=useState(itemId);
+	const [name, setName]= useState('')
+
+	const handleNameInput = (e)=>{
+		console.log(e.target.value);
+		setName(e.target.value)
+	}
+
+	const handleReviewsInput =(e)=>{
+		e.preventDefault();
+		// console.log(e.target.value);
+		setName('')
+	}
+
 	const { title, price, id, desc, subtitle, main_img, short_description, battery_size, adaptor,bluetooth,
 	manufacturer, os, seller, reviews, tag} =data;
 	const mainImg = itemId.main_img.link;
@@ -78,6 +91,19 @@ const PhoneId = ({itemId}) => {
 										   date={el.date} review={el.review} title_review={el?.title_review} id={el.id}/>
 						})}
 					</div>}
+
+
+					{/*==========*/}
+					<div>
+						<p> add reviews</p>
+						<form onSubmit={handleReviewsInput}>
+							<div className='bg-red-200'>
+								<input type="text" className="bg-blue-200" value={name} onChange={handleNameInput}/>
+							</div>
+
+						</form>
+
+					</div>
 				</div>
 			</div>
 		</div>
