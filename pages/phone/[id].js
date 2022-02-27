@@ -16,7 +16,7 @@ const PhoneId = ({itemId}) => {
 	const {onAdd} = useContext(ProductContext);
 	const [showReview, setShowReview] = useState(false);
 	// const [loading, setLoading]=useState(false);
-
+	// console.log(itemId);
 
 	const title = itemId.message.title;
 	const price = itemId.message.price;
@@ -103,14 +103,45 @@ const PhoneId = ({itemId}) => {
 
 export default PhoneId;
 
-export async function getServerSideProps(context) {
-	const res = await fetch(`https://electronis-api.herokuapp.com/api/phones/${context.params.id}`);
-	// console.log(res);
-	const itemId = await res.json();
+// export async function getServerSideProps(context) {
+// 	const res = await fetch(`https://electronis-api.herokuapp.com/api/phones/${context.params.id}`);
+// 	// console.log(res);
+// 	const itemId = await res.json();
+//
+// 	return {
+// 		props: {
+// 			itemId
+// 		}
+// 	};
+// }
 
+
+
+
+let url = 'https://electronis-api.herokuapp.com/api/phones/';
+export const getStaticPaths = async () => {
+	const res = await fetch(url);
+	const data = await res.json();
+	const paths = data.map((el) => {
+		return {
+			params: {id: el.id.toString()}
+		};
+	});
+	return {
+		paths: paths,
+		fallback: false
+	};
+};
+//  info individual
+export const getStaticProps = async (context) => {
+	const id = context.params.id;
+	const res = await fetch(`${url}${id}`);
+	const itemId = await res.json();
+	// console.log(itemId);
 	return {
 		props: {
 			itemId
-		}
+		},
+		revalidate: 60
 	};
-}
+};
