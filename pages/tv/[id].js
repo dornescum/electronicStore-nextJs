@@ -12,7 +12,6 @@ import Image from 'next/image';
 const PhoneId = ({itemId}) => {
 	const {onAdd} = useContext(ProductContext);
 	const [showReview, setShowReview] = useState(false);
-	// const [data, setData]=useState(itemId);
 	const { title, price, id, desc, subtitle, main_img, short_description, battery_size, adaptor,bluetooth,
 		manufacturer, os, seller, reviews, tag} =itemId;
 	const mainImg = itemId.main_img.link;

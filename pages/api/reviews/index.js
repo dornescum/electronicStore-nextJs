@@ -1,19 +1,18 @@
-import {reviews} from '../../../data/reviews';
 
 export default function handler(req, res){
-
+    const comments =[];
     if (req.method ==="GET"){
-        res.status(200).json(reviews)
+        res.status(200).json({message:"no comments yet"})
     } else if(req.method === "POST") {
         // const comment = req.body.comment;
         const {comment, name, rating} = req.body;
-        const newReview ={
+        const newComment ={
             id: Date.now(),
-            comment, name, rating
+            text: comment,
+            name, rating
         }
-        reviews.push(newReview);
-        res.status(201).json(newReview)
+        comments.push(comment, name, rating);
+        res.status(201).json(newComment)
     }
 
 }
-

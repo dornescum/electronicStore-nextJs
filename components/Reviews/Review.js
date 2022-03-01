@@ -5,7 +5,7 @@ import { FaStar } from 'react-icons/fa';
 const picture ='https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80';
 
 
-const Review = ({id, name, date, rating, review, user_img, title_review}) => {
+const Review = ({id, name, date, rating, review, user_img, title_review, comment}) => {
 	// console.log(rating);
 	return (
 		<div className="flex font-dosis mx-2 my-4 flex-col md:flex-row specs border-b-4">
@@ -30,7 +30,7 @@ const Review = ({id, name, date, rating, review, user_img, title_review}) => {
 						})}
 					</div>
 
-					<p className='py-1'>{review ? review: "N/A"}</p>
+					<p className='py-1'>{review ? review: "N/A" || comment}</p>
 				</div>
 
 
