@@ -11,7 +11,6 @@ import HomePhones from "../components/HomePhones/HomePhones";
 
 export default function Home({products}) {
 	const {onAdd} = useContext(ProductContext);
-
 	const favoriteItems = products.filter((item) => item.favorite).slice(0,10);
 	const phonesProducts = products.filter((item => item.tag === "phone")).slice(0,10);
 
@@ -52,7 +51,7 @@ export default function Home({products}) {
 				</ul>
 			</section>
 			{/*==========*/}
-			{/*<Footer />*/}
+			<Footer />
 		</main>
 	);
 }
