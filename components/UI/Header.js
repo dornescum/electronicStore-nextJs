@@ -25,12 +25,12 @@ export default function Header({countCartItems}) {
 		<header className="block bg-zinc-50 z-20 flex w-full fixed top-0 justify-between p-4 font-dosis">
 			<div className="ml-0 lg:ml-52 flex items-center justify-center">
 				{showSidebar ?
-					<button onClick={() => setShowSidebar(!showSidebar)}
+					<button onClick={() => setShowSidebar(!showSidebar)} aria-label="Close" id='testing-aria'
 							className="p-2  transition ease-out duration-300 bg-primary  mx-4 md:mr-8">
 						<MdClose size="22"/>
 					</button>
 					:
-					<button onClick={() => setShowSidebar(!showSidebar)}
+					<button onClick={() => setShowSidebar(!showSidebar)} aria-label="Open" id='testing-ariaOpen'
 							className="p-2  transition ease-out duration-300 bg-primary  mx-4 md:mr-8">
 						{/*<MdFormatAlignRight/>*/}
 						<MdOutlineMenuOpen size="22"/>
@@ -48,9 +48,9 @@ export default function Header({countCartItems}) {
 							<li>
 								<button className="" onClick={() => {
 									setShowModal(!showModal);
-								}}>
+								}} aria-label="show-modal" >
 									{/*absolute -top-5 lg:-top-32 -right-24 lg:-right-80*/}
-									<span className=" border absolute bottom-4 right-4"> Close
+									<span className=" border absolute bottom-4 right-4" aria-label="close-modal" > Close
 										{/*<MdClose size="18"/>*/}
 									</span>
 								</button>

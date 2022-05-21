@@ -43,8 +43,10 @@ export default function Home({products}) {
 			<section className="mx-0  mt-4 mb-4 flex flex-col  justify-center items-center">
 				<ul className=" flex justify-center md:justify-start items-center flex-wrap flex-row w-full mb-20">
 					{favoriteItems.map((product) => {
+						// ! h-[27rem] error iphone 13
 						return <li key={product.id} id={product.id}
-								   className="mx-1 mb-2 md:mb-6 border drop-shadow-md hover:drop-shadow-2xl ease-in duration-300 ">
+								   className="mx-1 mb-2 md:mb-6 border drop-shadow-md hover:drop-shadow-2xl ease-in duration-300
+								   ">
 							<HomeFavorites product={product} onAdd={onAdd}/>
 						</li>;
 					})}

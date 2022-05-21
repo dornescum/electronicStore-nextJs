@@ -19,9 +19,9 @@ const Hero = () => {
 					return <div
 						className="block py-1 md:py-2 md:mb-0 md:mt-1 hover:bg-zinc-100 w-full transition duration-150 ease-out"
 						key={link.id} data-testid={link.id}>
-						<Link href={link.link}>
+						<Link href={link.link}  aria-label={link.title}>
 							<a className="flex justify-start pl-2 text-white"
-							   data-testid={link.title}>{link.title} </a>
+							   data-testid={link.title} >{link.title} </a>
 						</Link>
 					</div>;
 				})}
