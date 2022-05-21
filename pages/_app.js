@@ -21,15 +21,6 @@ function MyApp({Component, pageProps}) {
 	const [showSidebar, setShowSidebar] = useState(false);
 
 
-	// useEffect(() => {
-	// 	const getData = async () => {
-	// 		const res = await fetch(phoneApi);
-	// 		const data = await res.json();
-	// 		setProducts(data);
-	// 	};
-	// 	getData();
-	// }, []);
-
 	const onAdd = (product) => {
 		const exist = cartItems.find((x) => x.id === product.id);
 		if (exist) {
@@ -63,6 +54,8 @@ function MyApp({Component, pageProps}) {
 			<meta name="author" content="Mihai Dornescu"/>
 			<meta name="description" content="React js, Next js"/>
 			<meta name="keywords" content=" Next js"/>
+			<meta name='viewport'
+				  content='initial-scale=1, viewport-fit=cover, user-scalable=no'/>
 			<link rel="icon" href="/favicon.ico"/>
 		</Head>
 		<Header countCartItems={cartItems.length}/>
